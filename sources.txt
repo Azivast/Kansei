@@ -1,0 +1,7 @@
+86 model: https://sketchfab.com/3d-models/toyota-ae86-sprinter-trueno-zenki-a5737bf3cc9b4179a6e5ebe173ff70d9 (CC BY 4.0 Deed)
+mx5 model: https://sketchfab.com/3d-models/mazda-miata-mx-5-e074e29ccc3847dca74ed5e9cb92d3e7 (CC BY 4.0 Deed )
+
+
+vids:
+Car physics: https://www.youtube.com/watch?v=x0LUiE0dxP0
+Car controller: https://www.youtube.com/watch?v=jr4eb4F9PSQ&list=PLyh3AdCGPTSLg0PZuD1ykJJDnC1mThI42
