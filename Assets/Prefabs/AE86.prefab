@@ -1,5 +1,123 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &330585543
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 330585546}
+  - component: {fileID: 330585545}
+  - component: {fileID: 330585544}
+  - component: {fileID: 330585547}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &330585546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.2871, y: 1.0521, z: -0.2327}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5242558832159374309}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &330585545
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.1
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!81 &330585544
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+--- !u!114 &330585547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &38190277856737919
 GameObject:
   m_ObjectHideFlags: 0
@@ -25,7 +143,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 38190277856737919}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7094995, y: 0.31713644, z: -1.1636962}
+  m_LocalPosition: {x: -0.7094995, y: 0.68, z: -1.1636962}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -46,12 +164,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carRB: {fileID: 919132148752292535}
-  wheelModel: {fileID: 6969054758582641702}
-  unloadedLength: 0.5
-  compressedLength: 0.2
-  springStiffness: 30000
+  throttleInput: {fileID: 1258126978766673427, guid: 48ed8fcaea6bb104fbfc37d0b9d9fc57,
+    type: 3}
+  unloadedLength: 0.087
+  compressedLength: 0
+  springStiffness: 40000
   damperStiffness: 4000
   wheelRadius: 0.33
+  wheelAngle: 0
+  steerAngle: 0
+  steerTime: 8
+  wheelTransform: {fileID: 0}
 --- !u!1 &556980516075016895
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,8 +286,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906446355230146200}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.33, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -414,8 +537,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739332761628057970}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.33, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -627,7 +750,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4796499438928267822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7095005, y: 0.31713638, z: -1.1637056}
+  m_LocalPosition: {x: 0.7095005, y: 0.68, z: -1.1637056}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -648,12 +771,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carRB: {fileID: 919132148752292535}
-  wheelModel: {fileID: 676944163329314644}
-  unloadedLength: 0.5
-  compressedLength: 0.2
-  springStiffness: 30000
+  throttleInput: {fileID: 1258126978766673427, guid: 48ed8fcaea6bb104fbfc37d0b9d9fc57,
+    type: 3}
+  unloadedLength: 0.087
+  compressedLength: 0
+  springStiffness: 40000
   damperStiffness: 4000
   wheelRadius: 0.33
+  wheelAngle: 0
+  steerAngle: 0
+  steerTime: 8
+  wheelTransform: {fileID: 0}
 --- !u!1 &4845525136994971923
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,6 +875,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5242558832159374309}
   - component: {fileID: 919132148752292535}
+  - component: {fileID: 6457526265824821730}
   m_Layer: 0
   m_Name: AE86
   m_TagString: Untagged
@@ -779,6 +908,7 @@ Transform:
   - {fileID: 1828643623065268517}
   - {fileID: 7522573949030702563}
   - {fileID: 1029702889874491843}
+  - {fileID: 330585546}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -798,6 +928,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6457526265824821730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4866878096621592927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa513a1a10e49dc408737972ebe6c409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  steerInput: {fileID: -1680190386980627800, guid: 48ed8fcaea6bb104fbfc37d0b9d9fc57,
+    type: 3}
+  suspension:
+    FrontLeft: {fileID: 972654388393747340}
+    FrontRight: {fileID: 7193781213558894628}
+    RearLeft: {fileID: 4738216536808622419}
+    RearRight: {fileID: 6469899133214801046}
+  wheelBase: 2.4
+  rearTrack: 1.37
+  turnRadius: 4.8
+  steerAmount: 0
 --- !u!1 &5137003340054596000
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,8 +976,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5137003340054596000}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.33, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -991,7 +1144,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6042751712070302415}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7094995, y: 0.31713644, z: 1.2253901}
+  m_LocalPosition: {x: -0.7094995, y: 0.68, z: 1.2253901}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1012,12 +1165,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carRB: {fileID: 919132148752292535}
-  wheelModel: {fileID: 3464249899640627266}
-  unloadedLength: 0.5
-  compressedLength: 0.2
-  springStiffness: 30000
+  throttleInput: {fileID: 1258126978766673427, guid: 48ed8fcaea6bb104fbfc37d0b9d9fc57,
+    type: 3}
+  unloadedLength: 0.087
+  compressedLength: 0
+  springStiffness: 40000
   damperStiffness: 4000
   wheelRadius: 0.33
+  wheelAngle: 0
+  steerAngle: 0
+  steerTime: 8
+  wheelTransform: {fileID: 0}
 --- !u!1 &7696888676338005619
 GameObject:
   m_ObjectHideFlags: 0
@@ -1137,8 +1295,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8248714126584481433}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.33, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1222,7 +1380,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8686280176797261791}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7095005, y: 0.31713638, z: 1.2253832}
+  m_LocalPosition: {x: 0.7095005, y: 0.68, z: 1.2253832}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1243,12 +1401,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carRB: {fileID: 919132148752292535}
-  wheelModel: {fileID: 6391557690635295362}
-  unloadedLength: 0.5
-  compressedLength: 0.2
-  springStiffness: 30000
+  throttleInput: {fileID: 1258126978766673427, guid: 48ed8fcaea6bb104fbfc37d0b9d9fc57,
+    type: 3}
+  unloadedLength: 0.087
+  compressedLength: 0
+  springStiffness: 40000
   damperStiffness: 4000
   wheelRadius: 0.33
+  wheelAngle: 0
+  steerAngle: 0
+  steerTime: 8
+  wheelTransform: {fileID: 0}
 --- !u!1 &8899798485792985061
 GameObject:
   m_ObjectHideFlags: 0
