@@ -1,5 +1,57 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &38190277856737919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7522573949030702563}
+  - component: {fileID: 4738216536808622419}
+  m_Layer: 0
+  m_Name: SuspensionRL
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7522573949030702563
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38190277856737919}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7094995, y: 0.31713644, z: -1.1636962}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6969054758582641702}
+  m_Father: {fileID: 5242558832159374309}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4738216536808622419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38190277856737919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f573213b7a9d0c84f86077edc6105f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carRB: {fileID: 919132148752292535}
+  wheelModel: {fileID: 6969054758582641702}
+  unloadedLength: 0.5
+  compressedLength: 0.2
+  springStiffness: 30000
+  damperStiffness: 4000
+  wheelRadius: 0.33
 --- !u!1 &556980516075016895
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,7 +149,6 @@ GameObject:
   - component: {fileID: 6969054758582641702}
   - component: {fileID: 4965622272085798572}
   - component: {fileID: 201666352009894053}
-  - component: {fileID: 8441956053115846915}
   m_Layer: 0
   m_Name: RL_Wheel
   m_TagString: Untagged
@@ -112,13 +163,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906446355230146200}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.7094995, y: 0.31713644, z: -1.1636962}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5242558832159374309}
-  m_RootOrder: 10
+  m_Father: {fileID: 7522573949030702563}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4965622272085798572
 MeshFilter:
@@ -172,24 +223,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8441956053115846915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 906446355230146200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f573213b7a9d0c84f86077edc6105f90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  carRB: {fileID: 919132148752292535}
-  restLength: 0.7
-  springTravel: 0.2
-  springStiffness: 30000
-  damperStiffness: 4000
-  wheelRadius: 0.33
 --- !u!1 &1622447333341140845
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,7 +400,6 @@ GameObject:
   - component: {fileID: 676944163329314644}
   - component: {fileID: 8934971834586388136}
   - component: {fileID: 7701537071949167849}
-  - component: {fileID: 6858280263509068821}
   m_Layer: 0
   m_Name: RR_Wheel
   m_TagString: Untagged
@@ -382,13 +414,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739332761628057970}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.7095005, y: 0.31713638, z: -1.1637056}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5242558832159374309}
-  m_RootOrder: 11
+  m_Father: {fileID: 1029702889874491843}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8934971834586388136
 MeshFilter:
@@ -442,24 +474,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6858280263509068821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1739332761628057970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f573213b7a9d0c84f86077edc6105f90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  carRB: {fileID: 919132148752292535}
-  restLength: 0.7
-  springTravel: 0.2
-  springStiffness: 30000
-  damperStiffness: 4000
-  wheelRadius: 0.33
 --- !u!1 &3821570678295700202
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,6 +602,58 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &4796499438928267822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1029702889874491843}
+  - component: {fileID: 6469899133214801046}
+  m_Layer: 0
+  m_Name: SuspensionRR
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1029702889874491843
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4796499438928267822}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.7095005, y: 0.31713638, z: -1.1637056}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 676944163329314644}
+  m_Father: {fileID: 5242558832159374309}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6469899133214801046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4796499438928267822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f573213b7a9d0c84f86077edc6105f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carRB: {fileID: 919132148752292535}
+  wheelModel: {fileID: 676944163329314644}
+  unloadedLength: 0.5
+  compressedLength: 0.2
+  springStiffness: 30000
+  damperStiffness: 4000
+  wheelRadius: 0.33
 --- !u!1 &4845525136994971923
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,7 +685,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5242558832159374309}
-  m_RootOrder: 12
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &584036496430257061
 MeshFilter:
@@ -708,11 +774,11 @@ Transform:
   - {fileID: 1656616892445455448}
   - {fileID: 5104614328213579116}
   - {fileID: 2669157748336504313}
-  - {fileID: 3464249899640627266}
-  - {fileID: 6391557690635295362}
-  - {fileID: 6969054758582641702}
-  - {fileID: 676944163329314644}
   - {fileID: 195737787584618486}
+  - {fileID: 5099785781623914253}
+  - {fileID: 1828643623065268517}
+  - {fileID: 7522573949030702563}
+  - {fileID: 1029702889874491843}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -743,7 +809,6 @@ GameObject:
   - component: {fileID: 6391557690635295362}
   - component: {fileID: 1418459403966917059}
   - component: {fileID: 2031652078256202570}
-  - component: {fileID: 1799642954161440607}
   m_Layer: 0
   m_Name: FR_Wheel
   m_TagString: Untagged
@@ -758,13 +823,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5137003340054596000}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.7095005, y: 0.31713638, z: 1.2253832}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5242558832159374309}
-  m_RootOrder: 9
+  m_Father: {fileID: 1828643623065268517}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1418459403966917059
 MeshFilter:
@@ -818,24 +883,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1799642954161440607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5137003340054596000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f573213b7a9d0c84f86077edc6105f90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  carRB: {fileID: 919132148752292535}
-  restLength: 0.7
-  springTravel: 0.2
-  springStiffness: 30000
-  damperStiffness: 4000
-  wheelRadius: 0.33
 --- !u!1 &5204639383631745456
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,6 +966,58 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &6042751712070302415
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5099785781623914253}
+  - component: {fileID: 972654388393747340}
+  m_Layer: 0
+  m_Name: SuspensionFL
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5099785781623914253
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6042751712070302415}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7094995, y: 0.31713644, z: 1.2253901}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3464249899640627266}
+  m_Father: {fileID: 5242558832159374309}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &972654388393747340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6042751712070302415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f573213b7a9d0c84f86077edc6105f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carRB: {fileID: 919132148752292535}
+  wheelModel: {fileID: 3464249899640627266}
+  unloadedLength: 0.5
+  compressedLength: 0.2
+  springStiffness: 30000
+  damperStiffness: 4000
+  wheelRadius: 0.33
 --- !u!1 &7696888676338005619
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,7 +1123,6 @@ GameObject:
   - component: {fileID: 3464249899640627266}
   - component: {fileID: 1930324274690861897}
   - component: {fileID: 6910966539815105986}
-  - component: {fileID: 8542161851314534731}
   m_Layer: 0
   m_Name: FL_Wheel
   m_TagString: Untagged
@@ -1039,13 +1137,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8248714126584481433}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.7094995, y: 0.31713644, z: 1.2253901}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5242558832159374309}
-  m_RootOrder: 8
+  m_Father: {fileID: 5099785781623914253}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1930324274690861897
 MeshFilter:
@@ -1099,21 +1197,55 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8542161851314534731
+--- !u!1 &8686280176797261791
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1828643623065268517}
+  - component: {fileID: 7193781213558894628}
+  m_Layer: 0
+  m_Name: SuspensionFR
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1828643623065268517
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8686280176797261791}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.7095005, y: 0.31713638, z: 1.2253832}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6391557690635295362}
+  m_Father: {fileID: 5242558832159374309}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7193781213558894628
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8248714126584481433}
+  m_GameObject: {fileID: 8686280176797261791}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f573213b7a9d0c84f86077edc6105f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   carRB: {fileID: 919132148752292535}
-  restLength: 0.7
-  springTravel: 0.2
+  wheelModel: {fileID: 6391557690635295362}
+  unloadedLength: 0.5
+  compressedLength: 0.2
   springStiffness: 30000
   damperStiffness: 4000
   wheelRadius: 0.33
