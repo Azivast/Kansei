@@ -35,6 +35,7 @@ public class Suspension : MonoBehaviour
 
     public float sidewaysGrip;
     public float acceleration;
+    [HideInInspector] public bool WheelOnGround;
 
     private Vector3 suspensionForce;
     private Vector3 localWheelVelocity;
@@ -70,6 +71,7 @@ public class Suspension : MonoBehaviour
         float rayLength = unloadedLength+wheelRadius;
         if (Physics.Raycast(transform.position-transform.up*wheelRadius, -transform.up, out RaycastHit hit, rayLength))
         {
+            WheelOnGround = true;
             lastLength = currentSpringLength;
             currentSpringLength = hit.distance - wheelRadius;
             currentSpringLength = Mathf.Clamp(currentSpringLength, minLength, maxLength);
@@ -93,6 +95,7 @@ public class Suspension : MonoBehaviour
         }
         else
         {
+            WheelOnGround = false
             wheelTransform.transform.position = transform.position -transform.up*rayLength; // lerp thowards full extended
         }
     }
