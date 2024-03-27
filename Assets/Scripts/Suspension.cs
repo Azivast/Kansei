@@ -82,7 +82,7 @@ public class Suspension : MonoBehaviour
             suspensionForce = (springForce+damperForce)*carRB.transform.up;
 
             localWheelVelocity = transform.InverseTransformDirection(carRB.GetPointVelocity(hit.point));
-            wheelForce.x = throttleInput.action.ReadValue<float>() * springForce* sidewaysGrip;
+            wheelForce.x = throttleInput.action.ReadValue<float>() * springForce * sidewaysGrip;
             wheelForce.y = localWheelVelocity.x * springForce*acceleration;
 
             carRB.AddForceAtPosition(suspensionForce + 
