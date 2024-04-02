@@ -10,7 +10,7 @@ public class AntiRollBar : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float antiRollForce = LeftSuspension;
+        //float antiRollForce = LeftSuspension;
         
     }
 }

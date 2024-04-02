@@ -95,8 +95,9 @@ public class Suspension : MonoBehaviour
         }
         else
         {
-            WheelOnGround = false
+            WheelOnGround = false;
             wheelTransform.transform.position = transform.position -transform.up*rayLength; // lerp thowards full extended
+    
         }
     }
 }

@@ -4,3 +4,8 @@ mx5 model: https://sketchfab.com/3d-models/mazda-miata-mx-5-e074e29ccc3847dca74e
 vids:
 Car physics: https://www.youtube.com/watch?v=x0LUiE0dxP0
 Car controller: https://www.youtube.com/watch?v=jr4eb4F9PSQ&list=PLyh3AdCGPTSLg0PZuD1ykJJDnC1mThI42
+
+Materials:
+Ground 037 cc0: https://ambientcg.com/view?id=Ground037
+
+Road System: https://assetstore.unity.com/packages/tools/level-design/road-system-192818
