@@ -9,6 +9,7 @@ using Unity.MLAgents.Sensors;
 public class AIDriver : Agent
 {
     [SerializeField] private Transform testTarget; 
+    [SerializeField] private Transform startPos; 
     [SerializeField] private CarController carController;
     private int checkpointsReached = 0;
 
@@ -20,7 +21,7 @@ public class AIDriver : Agent
 
     public override void OnEpisodeBegin()
     {
-        transform.position = new Vector3(0, 1, 0);
+        transform.position = startPos.position;
         transform.rotation = Quaternion.identity;
         checkpointsReached = 0;
     }
@@ -35,6 +36,7 @@ public class AIDriver : Agent
     {
         float throttle = actions.ContinuousActions[0];
         float steer = actions.ContinuousActions[1];
+        Debug.Log(steer);
         
         carController.SetInputs(steer, throttle);
     }
@@ -56,7 +58,11 @@ public class AIDriver : Agent
             AddReward(-1);
             EndEpisode();
         }
-        
-        if (checkpointsReached==8) EndEpisode();
+
+        if (other.transform == testTarget)
+        {
+            AddReward(+10);
+            EndEpisode();
+        }
     }
 }
