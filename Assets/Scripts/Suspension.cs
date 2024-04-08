@@ -8,7 +8,7 @@ public class Suspension : MonoBehaviour
 {
     [SerializeField] private Rigidbody carRB;
 
-    [SerializeField] private InputActionReference throttleInput;
+
 
     [Header("Spring")]
     public float unloadedLength;
@@ -40,10 +40,11 @@ public class Suspension : MonoBehaviour
     private Vector3 suspensionForce;
     private Vector3 localWheelVelocity;
     private Vector2 wheelForce;
+    
+    private CarController carController;
 
-    private void OnEnable() 
-    {
-        throttleInput.action.Enable();
+    private void OnEnable() {
+        carController = GetComponentInParent<CarController>();
     }
 
     private void Start()
@@ -84,7 +85,7 @@ public class Suspension : MonoBehaviour
             suspensionForce = (springForce+damperForce)*carRB.transform.up;
 
             localWheelVelocity = transform.InverseTransformDirection(carRB.GetPointVelocity(hit.point));
-            wheelForce.x = throttleInput.action.ReadValue<float>() * springForce * sidewaysGrip;
+            wheelForce.x = carController.throttle * springForce * sidewaysGrip;
             wheelForce.y = localWheelVelocity.x * springForce*acceleration;
 
             carRB.AddForceAtPosition(suspensionForce + 
@@ -97,7 +98,6 @@ public class Suspension : MonoBehaviour
         {
             WheelOnGround = false;
             wheelTransform.transform.position = transform.position -transform.up*rayLength; // lerp thowards full extended
-    
         }
     }
 }

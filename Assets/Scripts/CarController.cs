@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class CarController : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class CarController : MonoBehaviour
 
     }
     public InputActionReference steerInput;
+    [SerializeField] private InputActionReference throttleInput;
     [SerializeField] private Suspensions suspension;
 
     [Header("Car Specs")]
@@ -24,8 +26,10 @@ public class CarController : MonoBehaviour
     public float rearTrack;
     public float turnRadius;
 
-    [Header("Inputs")]
+    [Header("Inputs")] 
+    public bool aiControlled = false;
     public float steerAmount;
+    public float throttle;
 
     private float ackermannAngleLeft;
     private float ackermannAngleRight;
@@ -35,11 +39,21 @@ public class CarController : MonoBehaviour
         steerInput.action.Enable();
     }
 
+    public void SetInputs(float steerAmount, float throttle) {
+        if (aiControlled)
+        {
+            this.steerAmount = steerAmount;
+            this.throttle = throttle;
+        }
+        else
+        {
+            this.steerAmount = steerInput.action.ReadValue<float>();
+            this.throttle = throttleInput.action.ReadValue<float>();}
+    }
 
     public void Update() 
     {
-        steerAmount = steerInput.action.ReadValue<float>();
-        Debug.Log(steerAmount);
+        if (!aiControlled) SetInputs(0, 0);
         if (steerAmount > 0) // steering left
         {
             ackermannAngleLeft = Mathf.Rad2Deg * Mathf.Atan(wheelBase / (turnRadius + (rearTrack / 2))) * steerAmount;

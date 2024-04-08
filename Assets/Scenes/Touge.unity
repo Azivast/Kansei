@@ -446,6 +446,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 972654388393747340, guid: b97e8bac3cd5caa469857bd954c132f3,
+        type: 3}
+      propertyPath: acceleration
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1029702889874491843, guid: b97e8bac3cd5caa469857bd954c132f3,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -455,6 +460,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.539
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738216536808622419, guid: b97e8bac3cd5caa469857bd954c132f3,
+        type: 3}
+      propertyPath: acceleration
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4866878096621592927, guid: b97e8bac3cd5caa469857bd954c132f3,
         type: 3}
@@ -520,6 +530,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6457526265824821730, guid: b97e8bac3cd5caa469857bd954c132f3,
+        type: 3}
+      propertyPath: throttleInput
+      value: 
+      objectReference: {fileID: 1258126978766673427, guid: 48ed8fcaea6bb104fbfc37d0b9d9fc57,
+        type: 3}
+    - target: {fileID: 6469899133214801046, guid: b97e8bac3cd5caa469857bd954c132f3,
+        type: 3}
+      propertyPath: acceleration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193781213558894628, guid: b97e8bac3cd5caa469857bd954c132f3,
+        type: 3}
+      propertyPath: acceleration
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7522573949030702563, guid: b97e8bac3cd5caa469857bd954c132f3,
         type: 3}
