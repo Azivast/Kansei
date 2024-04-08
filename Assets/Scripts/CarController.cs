@@ -36,7 +36,11 @@ public class CarController : MonoBehaviour
 
     private void OnEnable()
     {
-        steerInput.action.Enable();
+        if (!aiControlled)
+        {
+            steerInput.action.Enable();
+            throttleInput.action.Enable();
+        }
     }
 
     public void SetInputs(float steerAmount, float throttle) {
