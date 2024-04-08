@@ -2,3 +2,4 @@
 * text=auto
 *.dll filter=lfs diff=lfs merge=lfs -text
 Assets/Barmetler/Road[[:space:]]System/Demo/Scenes/ExampleSystem/LightingData.asset filter=lfs diff=lfs merge=lfs -text
+*.lib filter=lfs diff=lfs merge=lfs -text
