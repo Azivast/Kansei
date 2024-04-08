@@ -137,7 +137,6 @@ class AgentBufferField(list):
         Sets the list of BufferEntry to the input data
         :param data: The BufferEntry list to be set.
         """
-        self[:] = []
         self[:] = data
 
     def get_batch(
@@ -264,9 +263,7 @@ class AgentBuffer(MutableMapping):
         )
 
     def __str__(self):
-        return ", ".join(
-            ["'{}' : {}".format(k, str(self[k])) for k in self._fields.keys()]
-        )
+        return ", ".join([f"'{k}' : {str(self[k])}" for k in self._fields.keys()])
 
     def reset_agent(self) -> None:
         """
