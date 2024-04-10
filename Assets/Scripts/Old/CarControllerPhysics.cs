@@ -6,15 +6,15 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
-public class CarController : MonoBehaviour
+public class CarControllerPhysics : MonoBehaviour
 {
     [Serializable]
     internal class Suspensions
     {
-        public Suspension FrontLeft;
-        public Suspension FrontRight;
-        public Suspension RearLeft;
-        public Suspension RearRight;
+        public SuspensionPhysics FrontLeft;
+        public SuspensionPhysics FrontRight;
+        public SuspensionPhysics RearLeft;
+        public SuspensionPhysics RearRight;
 
     }
     public InputActionReference steerInput;

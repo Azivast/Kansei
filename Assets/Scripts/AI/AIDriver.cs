@@ -5,18 +5,19 @@ using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
+using UnityEngine.Serialization;
 
 public class AIDriver : Agent
 {
     [SerializeField] private Transform testTarget; 
     [SerializeField] private Transform startPos; 
-    [SerializeField] private CarController carController;
+    [FormerlySerializedAs("carController")] [SerializeField] private CarControllerPhysics carControllerPhysics;
     private int checkpointsReached = 0;
 
     protected override void OnEnable()
     {
         base.OnEnable();
-        carController = GetComponent<CarController>();
+        carControllerPhysics = GetComponent<CarControllerPhysics>();
     }
 
     public override void OnEpisodeBegin()
@@ -38,7 +39,7 @@ public class AIDriver : Agent
         float steer = actions.ContinuousActions[1];
         Debug.Log(steer);
         
-        carController.SetInputs(steer, throttle);
+        carControllerPhysics.SetInputs(steer, throttle);
     }
 
     // public override void Heuristic(in ActionBuffers actionsOut)

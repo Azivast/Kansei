@@ -24,6 +24,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Brake",
+                    "type": "Value",
+                    "id": "a00bc633-92c1-4835-bfea-34a3d607b5d7",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Look",
                     "type": "Value",
                     "id": "6b444451-8a00-4d00-a97e-f47457f736a8",
@@ -134,24 +143,13 @@
                 {
                     "name": "WS",
                     "id": "932cd4a4-caec-4362-91a9-fc7fa2905f09",
-                    "path": "1DAxis",
+                    "path": "1DAxis(minValue=0)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Throttle",
                     "isComposite": true,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "Negative",
-                    "id": "7447134f-bad2-41d8-94eb-d5f03fa0bb0a",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Throttle",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 },
                 {
                     "name": "Positive",
@@ -167,24 +165,13 @@
                 {
                     "name": "1D Axis",
                     "id": "222e27d4-00d2-496c-bbb1-0fb7cae890e0",
-                    "path": "1DAxis",
+                    "path": "1DAxis(minValue=0)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Throttle",
                     "isComposite": true,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "a513300c-8670-4e32-9646-ee91278d9f78",
-                    "path": "<Gamepad>/leftTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Throttle",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 },
                 {
                     "name": "positive",
@@ -260,6 +247,50 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Steer",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "WS",
+                    "id": "43d664be-3d90-44a6-ab71-89743ff01dbc",
+                    "path": "1DAxis(minValue=0)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Brake",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "positive",
+                    "id": "d33db767-b55a-4f50-9f7b-91b66cc83191",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Brake",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "31225430-4fae-4522-b452-a5623874dce6",
+                    "path": "1DAxis(minValue=0)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Brake",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "positive",
+                    "id": "8d495167-5b39-490b-8946-45ec6a1bf0cf",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Brake",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }

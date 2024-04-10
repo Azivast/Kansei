@@ -3,7 +3,8 @@ mx5 model: https://sketchfab.com/3d-models/mazda-miata-mx-5-e074e29ccc3847dca74e
 
 vids:
 Car physics: https://www.youtube.com/watch?v=x0LUiE0dxP0
-Car controller: https://www.youtube.com/watch?v=jr4eb4F9PSQ&list=PLyh3AdCGPTSLg0PZuD1ykJJDnC1mThI42
+Car controller physics based: https://www.youtube.com/watch?v=jr4eb4F9PSQ&list=PLyh3AdCGPTSLg0PZuD1ykJJDnC1mThI42
+Car Controller: https://www.youtube.com/watch?v=gEwNHUDc8uE&list=PL0JXhw1odpJLTRBDdv4ybtYkuD1lEcF-N
 
 Materials:
 Ground 037 cc0: https://ambientcg.com/view?id=Ground037

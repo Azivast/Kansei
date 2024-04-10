@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class AntiRollBar : MonoBehaviour
 {
-    public Suspension LeftSuspension, RightSuspension;
+    [FormerlySerializedAs("LeftSuspension")] public SuspensionPhysics leftSuspensionPhysics;
+    [FormerlySerializedAs("RightSuspension")] public SuspensionPhysics rightSuspensionPhysics;
     public float RollBarStiffness;
 
 

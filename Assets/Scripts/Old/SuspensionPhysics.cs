@@ -4,7 +4,7 @@ using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Suspension : MonoBehaviour
+public class SuspensionPhysics : MonoBehaviour
 {
     [SerializeField] private Rigidbody carRB;
 
@@ -41,10 +41,10 @@ public class Suspension : MonoBehaviour
     private Vector3 localWheelVelocity;
     private Vector2 wheelForce;
     
-    private CarController carController;
+    private CarControllerPhysics carControllerPhysics;
 
     private void OnEnable() {
-        carController = GetComponentInParent<CarController>();
+        carControllerPhysics = GetComponentInParent<CarControllerPhysics>();
     }
 
     private void Start()
@@ -85,7 +85,7 @@ public class Suspension : MonoBehaviour
             suspensionForce = (springForce+damperForce)*carRB.transform.up;
 
             localWheelVelocity = transform.InverseTransformDirection(carRB.GetPointVelocity(hit.point));
-            wheelForce.x = carController.throttle * springForce * sidewaysGrip;
+            wheelForce.x = carControllerPhysics.throttle * springForce * sidewaysGrip;
             wheelForce.y = localWheelVelocity.x * springForce*acceleration;
 
             carRB.AddForceAtPosition(suspensionForce + 

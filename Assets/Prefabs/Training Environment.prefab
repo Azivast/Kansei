@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6533200749032285097}
   - component: {fileID: 6533200749032285098}
   - component: {fileID: 6533200749032285102}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Checkpoint
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,9 +123,9 @@ GameObject:
   - component: {fileID: 6533200749092411295}
   - component: {fileID: 6533200749092411288}
   - component: {fileID: 6533200749092411292}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -233,9 +233,9 @@ GameObject:
   - component: {fileID: 6533200749093670133}
   - component: {fileID: 6533200749093670134}
   - component: {fileID: 6533200749093670138}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Checkpoint
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -343,9 +343,9 @@ GameObject:
   - component: {fileID: 6533200749196058205}
   - component: {fileID: 6533200749196058206}
   - component: {fileID: 6533200749196058178}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Checkpoint
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -453,9 +453,9 @@ GameObject:
   - component: {fileID: 6533200749374402983}
   - component: {fileID: 6533200749374402976}
   - component: {fileID: 6533200749374402980}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Checkpoint
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -661,9 +661,9 @@ GameObject:
   - component: {fileID: 6533200749694675650}
   - component: {fileID: 6533200749694675651}
   - component: {fileID: 6533200749694675655}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -967,9 +967,9 @@ GameObject:
   - component: {fileID: 6533200749904862662}
   - component: {fileID: 6533200749904862663}
   - component: {fileID: 6533200749904862667}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Checkpoint
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1077,9 +1077,9 @@ GameObject:
   - component: {fileID: 6533200749918568214}
   - component: {fileID: 6533200749918568215}
   - component: {fileID: 6533200749918568219}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1248,9 +1248,9 @@ GameObject:
   - component: {fileID: 6533200749971637196}
   - component: {fileID: 6533200749971637197}
   - component: {fileID: 6533200749971637233}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (5)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1554,9 +1554,9 @@ GameObject:
   - component: {fileID: 6533200750137816747}
   - component: {fileID: 6533200750137816740}
   - component: {fileID: 6533200750137816744}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Checkpoint
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1860,9 +1860,9 @@ GameObject:
   - component: {fileID: 6533200750232658631}
   - component: {fileID: 6533200750232658624}
   - component: {fileID: 6533200750232658628}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2264,9 +2264,9 @@ GameObject:
   - component: {fileID: 6533200750410373889}
   - component: {fileID: 6533200750410373890}
   - component: {fileID: 6533200750410373891}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (6)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2570,9 +2570,9 @@ GameObject:
   - component: {fileID: 6533200750520988458}
   - component: {fileID: 6533200750520988459}
   - component: {fileID: 6533200750520988463}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Checkpoint
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2711,9 +2711,9 @@ GameObject:
   - component: {fileID: 6533200750620989697}
   - component: {fileID: 6533200750620989698}
   - component: {fileID: 6533200750620989702}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (4)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2821,9 +2821,9 @@ GameObject:
   - component: {fileID: 6533200750704450317}
   - component: {fileID: 6533200750704450318}
   - component: {fileID: 6533200750704450354}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Checkpoint
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3053,6 +3053,11 @@ PrefabInstance:
       propertyPath: testTarget
       value: 
       objectReference: {fileID: 6533200750520988456}
+    - target: {fileID: 1125740087117761415, guid: 1bda3366d65e5e54b9c27d4829594ca9,
+        type: 3}
+      propertyPath: DecisionPeriod
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5142585062782151147, guid: 1bda3366d65e5e54b9c27d4829594ca9,
         type: 3}
       propertyPath: m_RootOrder
@@ -3066,12 +3071,12 @@ PrefabInstance:
     - target: {fileID: 5142585062782151147, guid: 1bda3366d65e5e54b9c27d4829594ca9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.6265035
+      value: -3.36
       objectReference: {fileID: 0}
     - target: {fileID: 5142585062782151147, guid: 1bda3366d65e5e54b9c27d4829594ca9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.4800026
+      value: -9.55
       objectReference: {fileID: 0}
     - target: {fileID: 5142585062782151147, guid: 1bda3366d65e5e54b9c27d4829594ca9,
         type: 3}
@@ -3115,6 +3120,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bda3366d65e5e54b9c27d4829594ca9, type: 3}
+--- !u!1 &4966525749352872791 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5482553596223189841, guid: 1bda3366d65e5e54b9c27d4829594ca9,
+    type: 3}
+  m_PrefabInstance: {fileID: 646642203139917830}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4637970608885372703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4966525749352872791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: RayPerceptionSensor
+  m_DetectableTags:
+  - Wall
+  - Checkpoint
+  - Car
+  m_RaysPerDirection: 5
+  m_MaxRayDegrees: 105
+  m_SphereCastRadius: 0.42
+  m_RayLength: 43
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967240
+  m_ObservationStacks: 1
+  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
+  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  m_StartVerticalOffset: 0.3
+  m_EndVerticalOffset: -0.3
 --- !u!4 &5739684302018470381 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5142585062782151147, guid: 1bda3366d65e5e54b9c27d4829594ca9,
