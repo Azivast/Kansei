@@ -1068,7 +1068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4fadfb8568091e48ad94a531b3193a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSteeringWheelAngle: 900
+  maxSteeringWheelAngle: 500
 --- !u!1 &4866878096621592927
 GameObject:
   m_ObjectHideFlags: 0
