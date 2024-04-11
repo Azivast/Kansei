@@ -17,6 +17,7 @@ public class CarController : MonoBehaviour
     [SerializeField, Tooltip("Maximum brake torque Nm")] private float brakeTorque;
     [SerializeField, Range(0, 1), Tooltip("Bias towards front brakes")] private float brakeBias;
     [SerializeField] private float maxSteeringAngle = 60;
+    [SerializeField] private float maxSpeed;
 
     [Header("Settings")]
     [SerializeField] private AnimationCurve steeringCurve;
@@ -35,9 +36,20 @@ public class CarController : MonoBehaviour
 
     [HideInInspector] public float SteeringAngle;
     private float speed;
+    private float speedClamped;
     private float slipAngle;
 
     public float MaxSteeringAngle => maxSteeringAngle;
+    public float Speed => speed;
+
+    public float SpeedRatio
+    {
+        get
+        {
+            var throttleClamped = Mathf.Clamp(Mathf.Abs(throttleAmount), 0.5f, 1f); // todo explain the reason for this
+            return speedClamped*throttleClamped/maxSpeed;
+        }
+    }
         
     private void Awake()
     {
@@ -131,6 +143,12 @@ public class CarController : MonoBehaviour
 
     private void ApplyAcceleration()
     {
+        if (speed > maxSpeed)
+        {
+            Wheels.RearLeft.Collider.motorTorque = 0;
+            Wheels.RearRight.Collider.motorTorque = 0;
+            return;
+        }
         Wheels.RearLeft.Collider.motorTorque = engineTorque * throttleAmount;
         Wheels.RearRight.Collider.motorTorque = engineTorque * throttleAmount;
     }
@@ -162,7 +180,8 @@ public class CarController : MonoBehaviour
 
     private void Update()
     {
-        speed = carRB.velocity.magnitude;
+        speed = Wheels.RearLeft.Collider.rpm * Wheels.RearLeft.Collider.radius * 2 * Mathf.PI / 10;
+        speedClamped = Mathf.Lerp(speedClamped, speed, Time.deltaTime);
         
         if (!AIControlled) GetPlayerInput();
         ApplySteering();
