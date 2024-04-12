@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class CarController : MonoBehaviour
 {
@@ -10,12 +11,14 @@ public class CarController : MonoBehaviour
     public bool AIControlled = false;
     [SerializeField] private InputActionReference steerInput; 
     [SerializeField] private InputActionReference throttleInput; 
-    [SerializeField] private InputActionReference BrakeInput; 
+    [SerializeField] private InputActionReference brakeInput; 
+    [SerializeField] private InputActionReference handbrakeInput; 
 
     [Header("Car Stats")] 
     [SerializeField] private float engineTorque;
     [SerializeField, Tooltip("Maximum brake torque Nm")] private float brakeTorque;
     [SerializeField, Range(0, 1), Tooltip("Bias towards front brakes")] private float brakeBias;
+    [SerializeField, Tooltip("Maximum brake torque Nm")] private float handbrakeTorque;
     [SerializeField] private float maxSteeringAngle = 60;
     [SerializeField] private float maxSpeed;
 
@@ -32,6 +35,7 @@ public class CarController : MonoBehaviour
     //[Header("Variables")
     [SerializeField] private float throttleAmount;
     [SerializeField] private float brakeAmount;
+    [SerializeField] private float handbrakeAmount;
     [SerializeField] private float steerAmount;
 
     [HideInInspector] public float SteeringAngle;
@@ -62,7 +66,8 @@ public class CarController : MonoBehaviour
         {
             steerInput.action.Enable();
             throttleInput.action.Enable();
-            BrakeInput.action.Enable();
+            brakeInput.action.Enable();
+            handbrakeInput.action.Enable();
         }
     }
 
@@ -95,18 +100,20 @@ public class CarController : MonoBehaviour
 
     }
 
-    public void SetInputs(float steer, float throttle, float brake)
+    public void SetInputs(float steer, float throttle, float brake, float handbrake)
     {
         steerAmount = steer;
         throttleAmount = throttle;
         brakeAmount = brake;
+        handbrakeAmount = handbrake;
     }
 
     private void GetPlayerInput()
     {
         steerAmount = steerInput.action.ReadValue<float>(); 
         throttleAmount = throttleInput.action.ReadValue<float>();
-        brakeAmount = BrakeInput.action.ReadValue<float>();
+        brakeAmount = brakeInput.action.ReadValue<float>();
+        handbrakeAmount = handbrakeInput.action.ReadValue<float>();
     }
 
     private void UpdateWheelPosition(WheelCollider collider, MeshRenderer mesh)
@@ -174,8 +181,13 @@ public class CarController : MonoBehaviour
         
         Wheels.FrontLeft.Collider.brakeTorque = brakeAmount * brakeTorque * brakeBias;
         Wheels.FrontRight.Collider.brakeTorque = brakeAmount * brakeTorque * brakeBias;
-        Wheels.RearLeft.Collider.brakeTorque = brakeAmount * brakeTorque * (1 - brakeBias);
-        Wheels.RearRight.Collider.brakeTorque = brakeAmount * brakeTorque * (1 - brakeBias);
+        
+        // Factor in handbrake. Assuming disk brakes for footbrake and drum brakes for handbrake => 2 separate systems, don't clamp total value
+        float rearBrakeForce = brakeAmount * brakeTorque * (1 - brakeBias) + handbrakeAmount * handbrakeTorque;
+        Debug.Log(handbrakeAmount);
+
+        Wheels.RearLeft.Collider.brakeTorque = rearBrakeForce;
+        Wheels.RearRight.Collider.brakeTorque = rearBrakeForce;
     }
 
     private void Update()

@@ -9,7 +9,9 @@ Car Controller: https://www.youtube.com/watch?v=gEwNHUDc8uE&list=PL0JXhw1odpJLTR
 Materials:
 Ground 037 cc0: https://ambientcg.com/view?id=Ground037
 
-Road System: https://assetstore.unity.com/packages/tools/level-design/road-system-192818
+Road Architect MIT: https://github.com/FritzsHero/RoadArchitect/
 
 
 Engine Sounds: unity karting game https://learn.unity.com/project/karting-template
+
+trees: https://assetstore.unity.com/packages/3d/vegetation/trees/urp-tree-models-253340 (Standard Unity Asset Store EULA)

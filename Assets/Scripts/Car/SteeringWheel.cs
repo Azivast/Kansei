@@ -22,7 +22,6 @@ public class SteeringWheel : MonoBehaviour
     void Update()
     {
         float steerFraction = controller.SteeringAngle / controller.MaxSteeringAngle;
-        Debug.Log(steerFraction);
         
         transform.localRotation = Quaternion.Euler(
             initialRotation.x, 
