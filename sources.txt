@@ -8,6 +8,8 @@ Car Controller: https://www.youtube.com/watch?v=gEwNHUDc8uE&list=PL0JXhw1odpJLTR
 
 Materials:
 Ground 037 cc0: https://ambientcg.com/view?id=Ground037
+Moss003 cc0: https://ambientcg.com/view?id=Moss003
+Rock 036: https://ambientcg.com/view?id=Rock036
 
 Road Architect MIT: https://github.com/FritzsHero/RoadArchitect/
 
