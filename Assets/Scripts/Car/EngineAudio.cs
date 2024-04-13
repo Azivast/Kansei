@@ -11,7 +11,8 @@ public class EngineAudio : MonoBehaviour
     [SerializeField] private float revvingMaxPitch;
     
     [SerializeField] private AudioSource idleSound;
-    [SerializeField] private float idleMaxVolume;
+    [SerializeField] private float idleVolume;
+    [SerializeField] private float idlePitch;
     
     [SerializeField] private AudioSource reverseSound;
     [SerializeField] private float reverseMaxVolume;
@@ -43,27 +44,36 @@ public class EngineAudio : MonoBehaviour
         float speedDirection = Mathf.Sign(controller.Speed);
 
 
+        // if (speedRatio > limiterThreshold)
+        // {
+        //     revLimiter = (Mathf.Sin(Time.time*limiterFrequency)+1f)*limiterPitch*(speedRatio-limiterThreshold);
+        // }
+        // idleSound.volume = Mathf.Lerp(idleMaxVolume, 0.01f, speedRatio);
+        // if (speedDirection > 0) // driving forwards
+        // {
+        //     reverseSound.volume = 0;
+        //     revvingSound.volume = Mathf.Lerp(0.3f, revvingMaxVolume, speedRatio);
+        //     revvingSound.pitch = Mathf.Lerp(revvingSound.pitch,
+        //         Mathf.Lerp(0.3f, revvingMaxPitch, speedRatio) + revLimiter,
+        //         Time.deltaTime * 5); // fix outer lerp, delays sound and sounds like shit
+        // }
+        // else // driving backwards
+        // {
+        //     //todo: no reverse gear atm so this is untested!
+        //     revvingSound.volume = 0;
+        //     reverseSound.volume = Mathf.Lerp(0f, reverseMaxVolume, speedRatio);
+        //     reverseSound.pitch = Mathf.Lerp(reverseSound.pitch,
+        //         Mathf.Lerp(0.2f, reverseMaxPitch, speedRatio) + revLimiter,
+        //         Time.deltaTime * 5); // fix outer lerp, delays sound and sounds like shit
+        // }
+        
         if (speedRatio > limiterThreshold)
         {
             revLimiter = (Mathf.Sin(Time.time*limiterFrequency)+1f)*limiterPitch*(speedRatio-limiterThreshold);
         }
-        idleSound.volume = Mathf.Lerp(0.1f, idleMaxVolume, speedRatio);
-        if (speedDirection > 0) // driving forwards
-        {
-            reverseSound.volume = 0;
-            revvingSound.volume = Mathf.Lerp(0.3f, revvingMaxVolume, speedRatio);
-            revvingSound.pitch = Mathf.Lerp(revvingSound.pitch,
-                Mathf.Lerp(0.3f, revvingMaxPitch, speedRatio) + revLimiter,
-                Time.deltaTime * 5); // fix outer lerp, delays sound and sounds like shit
-        }
-        else // driving backwards
-        {
-            //todo: no reverse gear atm so this is untested!
-            revvingSound.volume = 0;
-            reverseSound.volume = Mathf.Lerp(0f, reverseMaxVolume, speedRatio);
-            reverseSound.pitch = Mathf.Lerp(reverseSound.pitch,
-                Mathf.Lerp(0.2f, reverseMaxPitch, speedRatio) + revLimiter,
-                Time.deltaTime * 5); // fix outer lerp, delays sound and sounds like shit
-        }
+        revvingSound.volume = Mathf.Lerp(idleVolume, revvingMaxVolume, speedRatio);
+        revvingSound.pitch = Mathf.Lerp(revvingSound.pitch,
+            Mathf.Lerp(idlePitch, revvingMaxPitch, speedRatio) + revLimiter,
+            Time.deltaTime * 5); // fix outer lerp, delays sound and sounds like shit
     }
 }

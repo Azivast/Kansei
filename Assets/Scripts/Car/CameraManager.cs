@@ -15,6 +15,7 @@ public class CameraManager : MonoBehaviour
         changeCameraInput.action.performed += OnChangeCameraInput;
         
         // Disable all cameras except the first one
+        cameras[0].enabled = true;
         for (int i = 1; i < cameras.Length; i++)
         {
             cameras[i].enabled = false;
