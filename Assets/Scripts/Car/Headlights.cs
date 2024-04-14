@@ -23,12 +23,14 @@ public class Headlights : MonoBehaviour
 
     private void OnEnable()
     {
+        if (toggleHeadlightsInput == null) return;
         toggleHeadlightsInput.action.Enable();
         toggleHeadlightsInput.action.performed += OnToggleHeadlightsInput;
     }
 
     private void OnDisable()
     {
+        if (toggleHeadlightsInput == null) return;
         toggleHeadlightsInput.action.Disable();
         toggleHeadlightsInput.action.performed -= OnToggleHeadlightsInput;
     }

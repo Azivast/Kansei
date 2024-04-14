@@ -2,22 +2,22 @@
     "AIDriver": {
         "checkpoints": [
             {
-                "steps": 20559,
-                "file_path": "results\\ppo\\AIDriver\\AIDriver-20559.onnx",
-                "reward": -1.0,
-                "creation_time": 1712593837.7700248,
+                "steps": 0,
+                "file_path": "results\\ppo\\AIDriver\\AIDriver-0.onnx",
+                "reward": null,
+                "creation_time": 1713112111.054719,
                 "auxillary_file_paths": [
-                    "results\\ppo\\AIDriver\\AIDriver-20559.pt"
+                    "results\\ppo\\AIDriver\\AIDriver-0.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 20559,
+            "steps": 0,
             "file_path": "results\\ppo\\AIDriver.onnx",
-            "reward": -1.0,
-            "creation_time": 1712593837.7700248,
+            "reward": null,
+            "creation_time": 1713112111.054719,
             "auxillary_file_paths": [
-                "results\\ppo\\AIDriver\\AIDriver-20559.pt"
+                "results\\ppo\\AIDriver\\AIDriver-0.pt"
             ]
         }
     },

@@ -9,10 +9,10 @@ public class CarController : MonoBehaviour
 {
     [Header("Input")]
     public bool AIControlled = false;
-    [SerializeField] private InputActionReference steerInput; 
-    [SerializeField] private InputActionReference throttleInput; 
-    [SerializeField] private InputActionReference brakeInput; 
-    [SerializeField] private InputActionReference handbrakeInput; 
+    public InputActionReference steerInput; 
+    public InputActionReference throttleInput; 
+    public InputActionReference brakeInput; 
+    public InputActionReference handbrakeInput; 
 
     [Header("Car Stats")] 
     [SerializeField] private float engineTorque;
@@ -62,13 +62,10 @@ public class CarController : MonoBehaviour
 
     private void OnEnable()
     {
-        if (!AIControlled)
-        {
-            steerInput.action.Enable();
-            throttleInput.action.Enable();
-            brakeInput.action.Enable();
-            handbrakeInput.action.Enable();
-        }
+        steerInput.action.Enable();
+        throttleInput.action.Enable();
+        brakeInput.action.Enable();
+        handbrakeInput.action.Enable();
     }
 
     private void Start()
@@ -139,7 +136,6 @@ public class CarController : MonoBehaviour
             if (Mathf.Abs(hit.sidewaysSlip)+Mathf.Abs(hit.forwardSlip) > slipSmokeThreshold)
             {
                 if (!Wheels.AsArray[i].Smoke.isPlaying) Wheels.AsArray[i].Smoke.Play(); //todo: optimize
-                Debug.Log("Started smoke");
             }
             else
             {
@@ -202,6 +198,19 @@ public class CarController : MonoBehaviour
         EvaluateTireSmoke();
         UpdateAllWheelsPositions();
 
+    }
+
+    public void ResetMovement()
+    {
+        carRB.velocity = Vector3.zero;
+        carRB.angularVelocity = Vector3.zero;
+
+        foreach (Wheels.Wheel wheel in Wheels.AsArray)
+        {
+            wheel.Collider.brakeTorque = 0;
+            wheel.Collider.motorTorque = 0;
+            wheel.Collider.steerAngle = 0;
+        }
     }
 }
 
