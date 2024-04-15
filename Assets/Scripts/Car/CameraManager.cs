@@ -15,10 +15,10 @@ public class CameraManager : MonoBehaviour
         changeCameraInput.action.performed += OnChangeCameraInput;
         
         // Disable all cameras except the first one
-        cameras[0].enabled = true;
+        cameras[0].gameObject.SetActive(true);
         for (int i = 1; i < cameras.Length; i++)
         {
-            cameras[i].enabled = false;
+            cameras[i].gameObject.SetActive(false);
         }
     }
 
@@ -31,10 +31,10 @@ public class CameraManager : MonoBehaviour
     {
         for (int i = 0; i < cameras.Length; i++)
         {
-            if (cameras[i].enabled)
+            if (cameras[i].gameObject.activeSelf)
             {
-                cameras[i].enabled = false;
-                cameras[(i + 1) % cameras.Length].enabled = true;
+                cameras[i].gameObject.SetActive(false);
+                cameras[(i + 1) % cameras.Length].gameObject.SetActive(true);
                 return;
             }
         }

@@ -9,7 +9,7 @@ def inp_handler(name):
 
     keyboard = KeyboardController()
     time.sleep(0.1)
-    choices = ["w", "a", "s", "d", "j", "k", Key.left, Key.right, Key.up, Key.down]
+    choices = ['w', 'a', 's', 'd', 'j', 'k', Key.left, Key.right, Key.up, Key.down]
     NUM_TESTS = 50
     for x in range(NUM_TESTS):
         i = random.choice(choices) if x != NUM_TESTS - 1 else Key.esc
@@ -25,7 +25,7 @@ def manual_control_test(manual_control):
 
     try:
         manual_control()
-    except Exception as e:
-        raise Exception("manual_control() has crashed. Please fix it.") from e
+    except Exception:
+        raise Exception("manual_control() has crashed. Please fix it.")
 
     manual_in_thread.join()

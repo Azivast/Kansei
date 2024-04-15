@@ -6,13 +6,15 @@ using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class AIDriver : Agent
 {
     [SerializeField] private Transform startPos; 
     [SerializeField] private CarController carController;
+    [SerializeField] private CheckpointCollection checkpoints;
+    private Checkpoint targetCheckpoint;
     private Rigidbody carRB;
-    private int checkpointsReached = 0;
     private float timeStill = 0;
 
     protected override void OnEnable()
@@ -25,9 +27,10 @@ public class AIDriver : Agent
     public override void OnEpisodeBegin()
     {
         carController.ResetMovement();
-        transform.position = startPos.position;
+        transform.position = startPos.position + 
+                             new Vector3(Random.insideUnitCircle.x, 0 ,Random.insideUnitCircle.y);
         transform.rotation = startPos.rotation;
-        checkpointsReached = 0;
+        targetCheckpoint = checkpoints.GetFirstCheckpoint();
     }
     
     
@@ -35,6 +38,8 @@ public class AIDriver : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
         sensor.AddObservation(carRB.velocity);
+        sensor.AddObservation(carRB.angularVelocity);
+        sensor.AddObservation(carRB.transform.forward);
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -66,17 +71,24 @@ public class AIDriver : Agent
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent<Checkpoint>(out _))
+        if (other.TryGetComponent<Goal>(out _))
         {
-            AddReward(+1);
-            checkpointsReached++;
-        }
-
-        if (checkpointsReached >= 24)
-        {
-            AddReward(+2);
+            AddReward(+10);
             EndEpisode();
-            Debug.Log("Reward: " + GetCumulativeReward());
+            return;
+        }
+        
+        if (other.TryGetComponent<Checkpoint>(out Checkpoint thisCheckpoint))
+        {
+            if (thisCheckpoint == targetCheckpoint)
+            {
+                targetCheckpoint = checkpoints.GetNextCheckpoint(targetCheckpoint);
+                AddReward(+1);
+            }
+            else
+            {
+                AddReward(-2);
+            }
         }
     }
 
@@ -84,15 +96,13 @@ public class AIDriver : Agent
     {
         if (other.collider.TryGetComponent<Wall>(out _))
         {
-            AddReward(-1);
+            AddReward(-3);
             EndEpisode();
-            Debug.Log("Reward: " + GetCumulativeReward());
         }
     }
 
     private void FixedUpdate()
     {
-        Debug.Log(Time.timeScale);
         if (carRB.velocity.magnitude <= 0.1f)
         {
             timeStill+= Time.fixedDeltaTime;
@@ -102,9 +112,14 @@ public class AIDriver : Agent
                 timeStill = 0;
                 AddReward(-2f);
                 EndEpisode();
-                Debug.Log("Reward: " + GetCumulativeReward());
             }
         }
         else timeStill = 0;
+        
+        
+        if (carRB.velocity.magnitude <= 1)
+        {
+            AddReward(-0.001f);
+        }
     }
 }

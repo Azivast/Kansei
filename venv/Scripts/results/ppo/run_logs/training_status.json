@@ -2,46 +2,28 @@
     "AIDriver": {
         "checkpoints": [
             {
-                "steps": 146724,
-                "file_path": "results\\ppo\\AIDriver\\AIDriver-146724.onnx",
+                "steps": 7424,
+                "file_path": "results\\ppo\\AIDriver\\AIDriver-7424.onnx",
                 "reward": null,
-                "creation_time": 1713174341.1296334,
+                "creation_time": 1713186367.610093,
                 "auxillary_file_paths": [
-                    "results\\ppo\\AIDriver\\AIDriver-146724.pt"
-                ]
-            },
-            {
-                "steps": 148341,
-                "file_path": "results\\ppo\\AIDriver\\AIDriver-148341.onnx",
-                "reward": null,
-                "creation_time": 1713174485.4527872,
-                "auxillary_file_paths": [
-                    "results\\ppo\\AIDriver\\AIDriver-148341.pt"
-                ]
-            },
-            {
-                "steps": 149800,
-                "file_path": "results\\ppo\\AIDriver\\AIDriver-149800.onnx",
-                "reward": -1.0,
-                "creation_time": 1713174664.2253726,
-                "auxillary_file_paths": [
-                    "results\\ppo\\AIDriver\\AIDriver-149800.pt"
+                    "results\\ppo\\AIDriver\\AIDriver-7424.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 149800,
+            "steps": 7424,
             "file_path": "results\\ppo\\AIDriver.onnx",
-            "reward": -1.0,
-            "creation_time": 1713174664.2253726,
+            "reward": null,
+            "creation_time": 1713186367.610093,
             "auxillary_file_paths": [
-                "results\\ppo\\AIDriver\\AIDriver-149800.pt"
+                "results\\ppo\\AIDriver\\AIDriver-7424.pt"
             ]
         }
     },
     "metadata": {
         "stats_format_version": "0.3.0",
-        "mlagents_version": "0.29.0",
-        "torch_version": "2.2.2+cu121"
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.0.1+cu118"
     }
 }

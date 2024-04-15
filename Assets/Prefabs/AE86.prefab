@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 348001477}
   - component: {fileID: 348001479}
-  - component: {fileID: 348001478}
   m_Layer: 0
   m_Name: Spot Light
   m_TagString: Untagged
@@ -96,26 +95,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &348001478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 348001476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 1
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &410203575
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +234,6 @@ GameObject:
   m_Component:
   - component: {fileID: 703755038}
   - component: {fileID: 703755040}
-  - component: {fileID: 703755039}
   m_Layer: 0
   m_Name: Spot Light (1)
   m_TagString: Untagged
@@ -340,26 +318,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &703755039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 703755037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 1
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &1001068391
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,14 +587,13 @@ GameObject:
   - component: {fileID: 824761417305611046}
   - component: {fileID: 6628293344520461890}
   - component: {fileID: 2446341053442745033}
-  - component: {fileID: 2972785168615536504}
   m_Layer: 0
   m_Name: BackwardsCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &824761417305611046
 Transform:
   m_ObjectHideFlags: 0
@@ -703,39 +660,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216156859920711198}
   m_Enabled: 1
---- !u!114 &2972785168615536504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 216156859920711198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
 --- !u!1 &320544292753558278
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,14 +819,13 @@ GameObject:
   - component: {fileID: 1763347504071808606}
   - component: {fileID: 638845675725087874}
   - component: {fileID: 152917137103475752}
-  - component: {fileID: 1202808412311816704}
   m_Layer: 0
   m_Name: BumperCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1763347504071808606
 Transform:
   m_ObjectHideFlags: 0
@@ -969,39 +892,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624711804917812966}
   m_Enabled: 1
---- !u!114 &1202808412311816704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 624711804917812966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
 --- !u!1 &906446355230146200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,14 +1239,13 @@ GameObject:
   - component: {fileID: 4231578361058294212}
   - component: {fileID: 3275226505853376685}
   - component: {fileID: 1056869131612773672}
-  - component: {fileID: 1806765600955336898}
   m_Layer: 0
   m_Name: FollowCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4231578361058294212
 Transform:
   m_ObjectHideFlags: 0
@@ -1423,39 +1312,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3206413506925483947}
   m_Enabled: 1
---- !u!114 &1806765600955336898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3206413506925483947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
 --- !u!1 &3397185471922253334
 GameObject:
   m_ObjectHideFlags: 0
@@ -1612,7 +1468,6 @@ GameObject:
   - component: {fileID: 4294339682591688625}
   - component: {fileID: 4294339682591688628}
   - component: {fileID: 4294339682591688627}
-  - component: {fileID: 4294339682591688626}
   - component: {fileID: 3006802644112215610}
   m_Layer: 0
   m_Name: InteriorCamera
@@ -1620,7 +1475,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4294339682591688625
 Transform:
   m_ObjectHideFlags: 0
@@ -1687,39 +1542,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4294339682591688624}
   m_Enabled: 1
---- !u!114 &4294339682591688626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4294339682591688624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
 --- !u!114 &3006802644112215610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1744,14 +1566,13 @@ GameObject:
   - component: {fileID: 4294339682615366294}
   - component: {fileID: 4294339682615366297}
   - component: {fileID: 4294339682615366296}
-  - component: {fileID: 4294339682615366295}
   m_Layer: 0
   m_Name: SideCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4294339682615366294
 Transform:
   m_ObjectHideFlags: 0
@@ -1818,39 +1639,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4294339682615366293}
   m_Enabled: 1
---- !u!114 &4294339682615366295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4294339682615366293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
 --- !u!1 &4497273351591452407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1974,7 +1762,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6005592347430321816
 Transform:
   m_ObjectHideFlags: 0
@@ -2009,12 +1797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameras:
-  - {fileID: 4294339682591688628}
-  - {fileID: 3776703247451176936}
-  - {fileID: 638845675725087874}
   - {fileID: 3275226505853376685}
-  - {fileID: 4294339682615366297}
-  - {fileID: 6628293344520461890}
   changeCameraInput: {fileID: -5661240608900071647, guid: 48ed8fcaea6bb104fbfc37d0b9d9fc57,
     type: 3}
 --- !u!1 &4845525136994971923
@@ -2128,6 +1911,12 @@ GameObject:
   - component: {fileID: 561816975}
   - component: {fileID: 1647539382302101308}
   - component: {fileID: 3381768513554519406}
+  - component: {fileID: 1549033595}
+  - component: {fileID: 1549033596}
+  - component: {fileID: 1549033597}
+  - component: {fileID: 1549033598}
+  - component: {fileID: 1549033605}
+  - component: {fileID: 1549033610}
   m_Layer: 0
   m_Name: AE86
   m_TagString: Untagged
@@ -2186,7 +1975,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &8086346495212375663
 MonoBehaviour:
@@ -2200,7 +1989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102875c476749094282771ed23a9ce76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AIControlled: 0
+  AIControlled: 1
   steerInput: {fileID: -1680190386980627800, guid: 48ed8fcaea6bb104fbfc37d0b9d9fc57,
     type: 3}
   throttleInput: {fileID: 1258126978766673427, guid: 48ed8fcaea6bb104fbfc37d0b9d9fc57,
@@ -2321,6 +2110,140 @@ MonoBehaviour:
   LeftWheel: {fileID: 8970815592430333607}
   RightWheel: {fileID: 8265000078624152859}
   RollBarStiffness: 5000
+--- !u!114 &1549033595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4866878096621592927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: SideRaysSensor
+  m_DetectableTags:
+  - Wall
+  - Car
+  m_RaysPerDirection: 2
+  m_MaxRayDegrees: 121.7
+  m_SphereCastRadius: 0.77
+  m_RayLength: 8
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967104
+  m_ObservationStacks: 1
+  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
+  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  m_StartVerticalOffset: 0.44
+  m_EndVerticalOffset: 0.44
+--- !u!114 &1549033596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4866878096621592927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32fdc7f3e4a48f14d89ac69af61fa8fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 50000
+  startPos: {fileID: 0}
+  carController: {fileID: 8086346495212375663}
+--- !u!114 &1549033597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4866878096621592927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DecisionPeriod: 1
+  TakeActionsBetweenDecisions: 1
+--- !u!114 &1549033598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4866878096621592927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1c4e0b1822b495aa52bc52839ecb30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BrainParameters:
+    VectorObservationSize: 9
+    NumStackedVectorObservations: 1
+    m_ActionSpec:
+      m_NumContinuousActions: 3
+      BranchSizes: 
+    VectorActionSize: 03000000
+    VectorActionDescriptions: []
+    VectorActionSpaceType: 1
+    hasUpgradedBrainParametersWithActionSpec: 1
+  m_Model: {fileID: 0}
+  m_InferenceDevice: 0
+  m_BehaviorType: 0
+  m_BehaviorName: AIDriver
+  TeamId: 0
+  m_UseChildSensors: 1
+  m_UseChildActuators: 1
+  m_ObservableAttributeHandling: 0
+--- !u!114 &1549033605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4866878096621592927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2902496c0120472b90269f94a0aec7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Record: 0
+  NumStepsToRecord: 0
+  DemonstrationName: SimpleTrackRight
+  DemonstrationDirectory: Demos
+--- !u!114 &1549033610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4866878096621592927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: ForwardRaysSensor
+  m_DetectableTags:
+  - Wall
+  - Car
+  m_RaysPerDirection: 2
+  m_MaxRayDegrees: 16
+  m_SphereCastRadius: 0.5
+  m_RayLength: 137
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 320
+  m_ObservationStacks: 1
+  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
+  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  m_StartVerticalOffset: 0.44
+  m_EndVerticalOffset: 0
 --- !u!1 &5137003340054596000
 GameObject:
   m_ObjectHideFlags: 0
@@ -2625,14 +2548,13 @@ GameObject:
   - component: {fileID: 7934529215972912475}
   - component: {fileID: 3776703247451176936}
   - component: {fileID: 8691247101225600397}
-  - component: {fileID: 4863628523459049639}
   m_Layer: 0
   m_Name: HoodCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7934529215972912475
 Transform:
   m_ObjectHideFlags: 0
@@ -2699,39 +2621,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7918851574928989463}
   m_Enabled: 1
---- !u!114 &4863628523459049639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7918851574928989463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
 --- !u!1 &8248714126584481433
 GameObject:
   m_ObjectHideFlags: 0
@@ -2917,8 +2806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50b656ff9d5092b4bae9a19c67e74b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toggleHeadlightsInput: {fileID: 5845946843056093890, guid: 48ed8fcaea6bb104fbfc37d0b9d9fc57,
-    type: 3}
+  toggleHeadlightsInput: {fileID: 0}
   lights: {fileID: 348001476}
   animationDuration: 1
   rotationAmount: 63

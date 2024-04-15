@@ -3,13 +3,14 @@ behaviors:
   AIDriver:
     trainer_type: ppo
     hyperparameters:
-      batch_size: 10
-      buffer_size: 100
-      learning_rate: 0.0003
-      beta: 0.0005
+      batch_size: 512
+      buffer_size: 10240
+      learning_rate: 0.0002
+      beta: 0.005
       epsilon: 0.2
       lambd: 0.99
       num_epoch: 3
+      shared_critic: false
       learning_rate_schedule: linear
       beta_schedule: constant
       epsilon_schedule: linear
@@ -36,7 +37,7 @@ behaviors:
     init_path: null
     keep_checkpoints: 5
     checkpoint_interval: 500000
-    max_steps: 500000
+    max_steps: 5000000
     time_horizon: 64
     summary_freq: 10000
     threaded: false
@@ -56,17 +57,17 @@ engine_settings:
   width: 84
   height: 84
   quality_level: 5
-  time_scale: 1.0
+  time_scale: 20
   target_frame_rate: -1
-  capture_frame_rate: 0
+  capture_frame_rate: 60
   no_graphics: false
 environment_parameters: null
 checkpoint_settings:
   run_id: '1'
   initialize_from: null
   load_model: false
-  resume: false
-  force: true
+  resume: true
+  force: false
   train_model: false
   inference: false
   results_dir: results

@@ -1,3 +1,1 @@
-from pettingzoo.classic.go.go import env, raw_env
-
-__all__ = ["env", "raw_env"]
+from .go.go_env import env, raw_env

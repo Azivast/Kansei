@@ -2,10 +2,10 @@ behaviors:
   AIDriver:
     trainer_type: ppo
     hyperparameters:
-      batch_size: 10
-      buffer_size: 100
-      learning_rate: 3.0e-4
-      beta: 5.0e-4
+      batch_size: 1024
+      buffer_size: 10240
+      learning_rate: 2.0e-4
+      beta: 0.005
       epsilon: 0.2
       lambd: 0.99
       num_epoch: 3
@@ -22,10 +22,10 @@ behaviors:
         strength: 1.0
       gail:
         strength: 0.5
-        demo_path: C:\Users\o7\Unity projects\New folder\Kansei\Demos\SimpleTrackRight_0.demo
+        demo_path: C:\Users\o7\Unity projects\New folder\Kansei\Demos\SimpleTrackRight.demo
     behavioral_cloning:
       strength: 0.5
-      demo_path:  C:\Users\o7\Unity projects\New folder\Kansei\Demos\SimpleTrackRight_0.demo
-    max_steps: 500000
+      demo_path:  C:\Users\o7\Unity projects\New folder\Kansei\Demos\SimpleTrackRight.demo
+    max_steps: 5000000
     time_horizon: 64
     summary_freq: 10000
