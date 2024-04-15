@@ -162,7 +162,7 @@ public class CarController : MonoBehaviour
         
         var requestedSteeringAngle = steeringCurve.Evaluate(speed)*steerAmount*maxSteeringAngle;
         
-        SteeringAngle = Mathf.Lerp(SteeringAngle, requestedSteeringAngle, steerTime * Time.deltaTime);
+        SteeringAngle = Mathf.Lerp(SteeringAngle, requestedSteeringAngle, steerTime * Time.fixedDeltaTime);
 
         
         Wheels.FrontLeft.Collider.steerAngle = SteeringAngle;
@@ -180,7 +180,6 @@ public class CarController : MonoBehaviour
         
         // Factor in handbrake. Assuming disk brakes for footbrake and drum brakes for handbrake => 2 separate systems, don't clamp total value
         float rearBrakeForce = brakeAmount * brakeTorque * (1 - brakeBias) + handbrakeAmount * handbrakeTorque;
-        Debug.Log(handbrakeAmount);
 
         Wheels.RearLeft.Collider.brakeTorque = rearBrakeForce;
         Wheels.RearRight.Collider.brakeTorque = rearBrakeForce;
@@ -188,16 +187,19 @@ public class CarController : MonoBehaviour
 
     private void Update()
     {
+        EvaluateTireSmoke();
+        UpdateAllWheelsPositions();
+    }
+
+    private void FixedUpdate()
+    {
         speed = Wheels.RearLeft.Collider.rpm * Wheels.RearLeft.Collider.radius * 2 * Mathf.PI / 10;
-        speedClamped = Mathf.Lerp(speedClamped, speed, Time.deltaTime);
+        speedClamped = Mathf.Lerp(speedClamped, speed, Time.fixedDeltaTime);
         
         if (!AIControlled) GetPlayerInput();
         ApplySteering();
         ApplyAcceleration();
         ApplyBrakes();
-        EvaluateTireSmoke();
-        UpdateAllWheelsPositions();
-
     }
 
     public void ResetMovement()

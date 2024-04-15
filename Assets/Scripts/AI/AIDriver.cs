@@ -13,6 +13,7 @@ public class AIDriver : Agent
     [SerializeField] private CarController carController;
     private Rigidbody carRB;
     private int checkpointsReached = 0;
+    private float timeStill = 0;
 
     protected override void OnEnable()
     {
@@ -28,6 +29,8 @@ public class AIDriver : Agent
         transform.rotation = startPos.rotation;
         checkpointsReached = 0;
     }
+    
+    
 
     public override void CollectObservations(VectorSensor sensor)
     {
@@ -37,9 +40,11 @@ public class AIDriver : Agent
     public override void OnActionReceived(ActionBuffers actions)
     {
         float steer = actions.ContinuousActions[0];
-        Debug.Log(actions.ContinuousActions[2]);
-        float throttle = (actions.ContinuousActions[1]+1)*0.5f; // make range 0-1
-        float brake = (actions.ContinuousActions[2]+1)*0.5f; // make range 0-1
+        // float throttle = (actions.ContinuousActions[1]+1)*0.5f; // make range 0-1
+        // float brake = (actions.ContinuousActions[2]+1)*0.5f; // make range 0-1
+        float throttle = Mathf.Clamp(actions.ContinuousActions[1], 0, 1);
+        float brake = -Mathf.Clamp(actions.ContinuousActions[1], -1, 0);
+        
         carController.SetInputs(steer, throttle, brake, 0);
     }
 
@@ -47,8 +52,8 @@ public class AIDriver : Agent
     {
         var actions = actionsOut.ContinuousActions;
         actions[0] = carController.steerInput.action.ReadValue<float>(); 
-        actions[1] = carController.throttleInput.action.ReadValue<float>();
-        actions[2] = carController.brakeInput.action.ReadValue<float>();
+        float throttleAndBrake = carController.throttleInput.action.ReadValue<float>() - carController.brakeInput.action.ReadValue<float>();
+        actions[1] = throttleAndBrake;
 
         // Since ContinuousActions range from -1 to 1 and they are converted to 0-1 in OnActionReceived,
         // the input value must be converted to -1 to 1.
@@ -66,15 +71,40 @@ public class AIDriver : Agent
             AddReward(+1);
             checkpointsReached++;
         }
-        if (other.TryGetComponent<Wall>(out _))
-        {
-            AddReward(-10);
-            EndEpisode();
-        }
 
         if (checkpointsReached >= 24)
         {
+            AddReward(+2);
             EndEpisode();
+            Debug.Log("Reward: " + GetCumulativeReward());
         }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.collider.TryGetComponent<Wall>(out _))
+        {
+            AddReward(-1);
+            EndEpisode();
+            Debug.Log("Reward: " + GetCumulativeReward());
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        Debug.Log(Time.timeScale);
+        if (carRB.velocity.magnitude <= 0.1f)
+        {
+            timeStill+= Time.fixedDeltaTime;
+            
+            if (timeStill >= 5)
+            {
+                timeStill = 0;
+                AddReward(-2f);
+                EndEpisode();
+                Debug.Log("Reward: " + GetCumulativeReward());
+            }
+        }
+        else timeStill = 0;
     }
 }
