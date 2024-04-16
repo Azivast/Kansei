@@ -93,12 +93,12 @@ public class AIDriver : Agent
         }
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionStay(Collision other)
     {
         if (other.collider.TryGetComponent<Wall>(out _))
         {
-            AddReward(-1f);
-            EndEpisode();
+            AddReward(-0.02f);
+            //EndEpisode();
         }
     }
 
@@ -114,10 +114,5 @@ public class AIDriver : Agent
                 EndEpisode();
             }
         }
-
-        // if (carRB.velocity.magnitude <= 0.05f)
-        // {
-        //     AddReward(-0.01f);
-        // }
     }
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 348001477}
   - component: {fileID: 348001479}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 410203576}
   - component: {fileID: 410203577}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RevvingSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 703755038}
   - component: {fileID: 703755040}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spot Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1001068392}
   - component: {fileID: 1001068393}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IdleSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -457,7 +457,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1929092484}
   - component: {fileID: 1929092485}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ReverseSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -587,7 +587,7 @@ GameObject:
   - component: {fileID: 824761417305611046}
   - component: {fileID: 6628293344520461890}
   - component: {fileID: 2446341053442745033}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BackwardsCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -670,7 +670,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7321081909583865340}
   - component: {fileID: 7321081909583865341}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FRWheelCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -733,7 +733,7 @@ GameObject:
   - component: {fileID: 1656616892445455448}
   - component: {fileID: 5391365005116496692}
   - component: {fileID: 6298014606828305967}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Interior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -819,7 +819,7 @@ GameObject:
   - component: {fileID: 1763347504071808606}
   - component: {fileID: 638845675725087874}
   - component: {fileID: 152917137103475752}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BumperCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -903,7 +903,7 @@ GameObject:
   - component: {fileID: 6969054758582641702}
   - component: {fileID: 4965622272085798572}
   - component: {fileID: 201666352009894053}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RL_Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -988,7 +988,7 @@ GameObject:
   - component: {fileID: 327358896349963465}
   - component: {fileID: 6968285435422377600}
   - component: {fileID: 8977302963968068983}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FR_Caliper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1071,7 +1071,7 @@ GameObject:
   - component: {fileID: 5104614328213579116}
   - component: {fileID: 1439701013136888112}
   - component: {fileID: 3309446518448584267}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RL_Caliper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1154,7 +1154,7 @@ GameObject:
   - component: {fileID: 676944163329314644}
   - component: {fileID: 8934971834586388136}
   - component: {fileID: 7701537071949167849}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RR_Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1239,13 +1239,13 @@ GameObject:
   - component: {fileID: 4231578361058294212}
   - component: {fileID: 3275226505853376685}
   - component: {fileID: 1056869131612773672}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FollowCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4231578361058294212
 Transform:
   m_ObjectHideFlags: 0
@@ -1322,7 +1322,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4197078585608612820}
   - component: {fileID: 3397185471922253335}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FLWheelCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1385,7 +1385,7 @@ GameObject:
   - component: {fileID: 3597875313599746744}
   - component: {fileID: 6953010678026993341}
   - component: {fileID: 3633405952564026761}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FL_Caliper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1469,7 +1469,7 @@ GameObject:
   - component: {fileID: 4294339682591688628}
   - component: {fileID: 4294339682591688627}
   - component: {fileID: 3006802644112215610}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: InteriorCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1566,7 +1566,7 @@ GameObject:
   - component: {fileID: 4294339682615366294}
   - component: {fileID: 4294339682615366297}
   - component: {fileID: 4294339682615366296}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SideCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1649,7 +1649,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8265000078624152858}
   - component: {fileID: 8265000078624152859}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RRWheelCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1711,7 +1711,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5705640651712073298}
   - component: {fileID: 2770816422521577499}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1756,13 +1756,13 @@ GameObject:
   m_Component:
   - component: {fileID: 6005592347430321816}
   - component: {fileID: 7455466609786516347}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6005592347430321816
 Transform:
   m_ObjectHideFlags: 0
@@ -1812,7 +1812,7 @@ GameObject:
   - component: {fileID: 584036496430257061}
   - component: {fileID: 7641587674394303506}
   - component: {fileID: 8422851172490577789}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SteeringWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1916,9 +1916,9 @@ GameObject:
   - component: {fileID: 1549033598}
   - component: {fileID: 1549033595}
   - component: {fileID: 1549033610}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AE86
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2124,7 +2124,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 50000
+  MaxStep: 10000
   startPos: {fileID: 0}
   carController: {fileID: 8086346495212375663}
   checkpoints: {fileID: 0}
@@ -2188,13 +2188,13 @@ MonoBehaviour:
   m_DetectableTags:
   - Wall
   - Car
-  m_RaysPerDirection: 2
-  m_MaxRayDegrees: 121.7
+  m_RaysPerDirection: 3
+  m_MaxRayDegrees: 139
   m_SphereCastRadius: 0.77
   m_RayLength: 8
   m_RayLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967104
+    m_Bits: 4294966848
   m_ObservationStacks: 1
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
@@ -2216,13 +2216,13 @@ MonoBehaviour:
   m_DetectableTags:
   - Wall
   - Car
-  m_RaysPerDirection: 2
-  m_MaxRayDegrees: 16
+  m_RaysPerDirection: 3
+  m_MaxRayDegrees: 5.1
   m_SphereCastRadius: 0.5
   m_RayLength: 137
   m_RayLayerMask:
     serializedVersion: 2
-    m_Bits: 320
+    m_Bits: 64
   m_ObservationStacks: 1
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
@@ -2239,7 +2239,7 @@ GameObject:
   - component: {fileID: 6391557690635295362}
   - component: {fileID: 1418459403966917059}
   - component: {fileID: 2031652078256202570}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FR_Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2324,7 +2324,7 @@ GameObject:
   - component: {fileID: 2669157748336504313}
   - component: {fileID: 5501099518237613558}
   - component: {fileID: 1497166588309762182}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RR_Caliper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2405,7 +2405,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5567460631843387183}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2438,7 +2438,7 @@ GameObject:
   - component: {fileID: 9137873799480694848}
   - component: {fileID: 170030932416627673}
   - component: {fileID: 3632405329824102722}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CarBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2532,7 +2532,7 @@ GameObject:
   - component: {fileID: 7934529215972912475}
   - component: {fileID: 3776703247451176936}
   - component: {fileID: 8691247101225600397}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HoodCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2616,7 +2616,7 @@ GameObject:
   - component: {fileID: 3464249899640627266}
   - component: {fileID: 1930324274690861897}
   - component: {fileID: 6910966539815105986}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FL_Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2702,7 +2702,7 @@ GameObject:
   - component: {fileID: 6615132856992740452}
   - component: {fileID: 5635726540599007296}
   - component: {fileID: 595606013144028284}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Headlights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2805,7 +2805,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1485235412087294266}
   - component: {fileID: 8970815592430333607}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RLWheelCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
