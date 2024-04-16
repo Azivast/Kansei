@@ -74,8 +74,8 @@ public class AIDriver : Agent
     {
         if (other.TryGetComponent<Goal>(out _))
         {
-            AddReward(+1);
-            goalReached = true;
+            AddReward(+10);
+            EndEpisode();
             return;
         }
         
@@ -93,26 +93,16 @@ public class AIDriver : Agent
         }
     }
 
-    private void OnCollisionStay(Collision other)
+    private void OnCollisionEnter(Collision other)
     {
         if (other.collider.TryGetComponent<Wall>(out _))
         {
-            AddReward(-0.02f);
-            //EndEpisode();
+            AddReward(-5f);
+            EndEpisode();
         }
     }
 
     private void FixedUpdate()
     {
-        if (goalReached)
-        {
-            timer += Time.fixedDeltaTime;
-            
-            if (timer >= 2)
-            {
-                timer = 0;
-                EndEpisode();
-            }
-        }
     }
 }
