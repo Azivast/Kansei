@@ -1,0 +1,29 @@
+{
+    "AIDriver": {
+        "checkpoints": [
+            {
+                "steps": 375990,
+                "file_path": "results\\7\\AIDriver\\AIDriver-375990.onnx",
+                "reward": null,
+                "creation_time": 1713279090.341792,
+                "auxillary_file_paths": [
+                    "results\\7\\AIDriver\\AIDriver-375990.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 375990,
+            "file_path": "results\\7\\AIDriver.onnx",
+            "reward": null,
+            "creation_time": 1713279090.341792,
+            "auxillary_file_paths": [
+                "results\\7\\AIDriver\\AIDriver-375990.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.0.1+cu118"
+    }
+}

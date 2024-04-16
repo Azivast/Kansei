@@ -1911,11 +1911,10 @@ GameObject:
   - component: {fileID: 561816975}
   - component: {fileID: 1647539382302101308}
   - component: {fileID: 3381768513554519406}
-  - component: {fileID: 1549033595}
   - component: {fileID: 1549033596}
   - component: {fileID: 1549033597}
   - component: {fileID: 1549033598}
-  - component: {fileID: 1549033605}
+  - component: {fileID: 1549033595}
   - component: {fileID: 1549033610}
   m_Layer: 0
   m_Name: AE86
@@ -2110,34 +2109,6 @@ MonoBehaviour:
   LeftWheel: {fileID: 8970815592430333607}
   RightWheel: {fileID: 8265000078624152859}
   RollBarStiffness: 5000
---- !u!114 &1549033595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4866878096621592927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SensorName: SideRaysSensor
-  m_DetectableTags:
-  - Wall
-  - Car
-  m_RaysPerDirection: 2
-  m_MaxRayDegrees: 121.7
-  m_SphereCastRadius: 0.77
-  m_RayLength: 8
-  m_RayLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967104
-  m_ObservationStacks: 1
-  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
-  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
-  m_StartVerticalOffset: 0.44
-  m_EndVerticalOffset: 0.44
 --- !u!114 &1549033596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2156,6 +2127,7 @@ MonoBehaviour:
   MaxStep: 50000
   startPos: {fileID: 0}
   carController: {fileID: 8086346495212375663}
+  checkpoints: {fileID: 0}
 --- !u!114 &1549033597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2200,7 +2172,7 @@ MonoBehaviour:
   m_UseChildSensors: 1
   m_UseChildActuators: 1
   m_ObservableAttributeHandling: 0
---- !u!114 &1549033605
+--- !u!114 &1549033595
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2209,13 +2181,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 4866878096621592927}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2902496c0120472b90269f94a0aec7e, type: 3}
+  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Record: 0
-  NumStepsToRecord: 0
-  DemonstrationName: SimpleTrackRight
-  DemonstrationDirectory: Demos
+  m_SensorName: SideRaysSensor
+  m_DetectableTags:
+  - Wall
+  - Car
+  m_RaysPerDirection: 2
+  m_MaxRayDegrees: 121.7
+  m_SphereCastRadius: 0.77
+  m_RayLength: 8
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967104
+  m_ObservationStacks: 1
+  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
+  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  m_StartVerticalOffset: 0.44
+  m_EndVerticalOffset: 0.44
 --- !u!114 &1549033610
 MonoBehaviour:
   m_ObjectHideFlags: 0

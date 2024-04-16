@@ -15,7 +15,8 @@ public class AIDriver : Agent
     [SerializeField] private CheckpointCollection checkpoints;
     private Checkpoint targetCheckpoint;
     private Rigidbody carRB;
-    private float timeStill = 0;
+    private float timer = 0;
+    private bool goalReached = false;
 
     protected override void OnEnable()
     {
@@ -73,8 +74,8 @@ public class AIDriver : Agent
     {
         if (other.TryGetComponent<Goal>(out _))
         {
-            AddReward(+10);
-            EndEpisode();
+            AddReward(+1);
+            goalReached = true;
             return;
         }
         
@@ -96,30 +97,27 @@ public class AIDriver : Agent
     {
         if (other.collider.TryGetComponent<Wall>(out _))
         {
-            AddReward(-3);
+            AddReward(-1f);
             EndEpisode();
         }
     }
 
     private void FixedUpdate()
     {
-        if (carRB.velocity.magnitude <= 0.1f)
+        if (goalReached)
         {
-            timeStill+= Time.fixedDeltaTime;
+            timer += Time.fixedDeltaTime;
             
-            if (timeStill >= 5)
+            if (timer >= 2)
             {
-                timeStill = 0;
-                AddReward(-2f);
+                timer = 0;
                 EndEpisode();
             }
         }
-        else timeStill = 0;
-        
-        
-        if (carRB.velocity.magnitude <= 1)
-        {
-            AddReward(-0.001f);
-        }
+
+        // if (carRB.velocity.magnitude <= 0.05f)
+        // {
+        //     AddReward(-0.01f);
+        // }
     }
 }
