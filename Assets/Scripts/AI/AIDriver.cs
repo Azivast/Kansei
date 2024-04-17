@@ -17,6 +17,7 @@ public class AIDriver : Agent
     private Rigidbody carRB;
     private float timer = 0;
     private bool goalReached = false;
+    private double time;
 
     protected override void OnEnable()
     {
@@ -32,9 +33,16 @@ public class AIDriver : Agent
                              new Vector3(Random.insideUnitCircle.x, 0 ,Random.insideUnitCircle.y);
         transform.rotation = startPos.rotation;
         targetCheckpoint = checkpoints.GetFirstCheckpoint();
+
+        time = Time.time;
     }
     
-    
+    private void FinishEpisode()
+    {
+        float timeTaken = (float)(Time.time - time);
+        AddReward(-timeTaken);
+        EndEpisode();
+    }
 
     public override void CollectObservations(VectorSensor sensor)
     {
@@ -75,7 +83,7 @@ public class AIDriver : Agent
         if (other.TryGetComponent<Goal>(out _))
         {
             AddReward(+10);
-            EndEpisode();
+            FinishEpisode();
             return;
         }
         
@@ -84,11 +92,12 @@ public class AIDriver : Agent
             if (thisCheckpoint == targetCheckpoint)
             {
                 targetCheckpoint = checkpoints.GetNextCheckpoint(targetCheckpoint);
-                AddReward(+1);
+                AddReward(+2);
             }
             else
             {
                 AddReward(-2);
+                Debug.Log("Car drove wrong way");
             }
         }
     }
@@ -97,12 +106,25 @@ public class AIDriver : Agent
     {
         if (other.collider.TryGetComponent<Wall>(out _))
         {
-            AddReward(-5f);
-            EndEpisode();
+            AddReward(-10f);
+            //FinishEpisode();
         }
     }
 
     private void FixedUpdate()
     {
+        // if (carRB.velocity.magnitude < 0.1f)
+        // {
+        //     timer += Time.fixedDeltaTime;
+        //     if (timer > 1f)
+        //     {
+        //         //AddReward(-1f);
+        //         FinishEpisode();
+        //     }
+        // }
+        // else
+        // {
+        //     timer = 0;
+        // }
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class CheckpointCollection : MonoBehaviour
 {
     private List<Checkpoint> checkpoints;
+    [SerializeField] private bool reversed;
 
     private void Awake()
     {
@@ -18,6 +19,7 @@ public class CheckpointCollection : MonoBehaviour
                 checkpoints.Add(checkpoint);
             }
         }
+        if (reversed) checkpoints.Reverse();
     }
     
     public Checkpoint GetFirstCheckpoint()
