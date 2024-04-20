@@ -1,0 +1,42 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1713541601",
+        "python_version": "3.9.13 (tags/v3.9.13:6de2ca5, May 17 2022, 16:36:42) [MSC v.1929 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Users\\o7\\Unity projects\\New folder\\Kansei\\venv\\Scripts\\mlagents-learn .\\config\\SimpleTrack.yaml --time-scale=1 --capture-frame-rate=0 --run-id=48 --resume",
+        "mlagents_version": "0.30.0",
+        "mlagents_envs_version": "0.30.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "2.0.1+cu118",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1713541663"
+    },
+    "total": 62.240481499999994,
+    "count": 1,
+    "self": 0.004783899999985408,
+    "children": {
+        "run_training.setup": {
+            "total": 0.10126230000000014,
+            "count": 1,
+            "self": 0.10126230000000014
+        },
+        "TrainerController.start_learning": {
+            "total": 62.13443530000001,
+            "count": 1,
+            "self": 7.569999999645916e-05,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 62.1343466,
+                    "count": 1,
+                    "self": 62.1343466
+                },
+                "TrainerController._save_models": {
+                    "total": 1.300000000981072e-05,
+                    "count": 1,
+                    "self": 1.300000000981072e-05
+                }
+            }
+        }
+    }
+}

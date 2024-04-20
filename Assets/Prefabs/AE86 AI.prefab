@@ -1916,7 +1916,6 @@ GameObject:
   - component: {fileID: 232510630308405235}
   - component: {fileID: 232510630308405238}
   - component: {fileID: 232510630308404999}
-  - component: {fileID: 232510630591986772}
   m_Layer: 8
   m_Name: AE86 AI
   m_TagString: Car
@@ -2003,7 +2002,7 @@ MonoBehaviour:
   brakeBias: 0.7
   handbrakeTorque: 500000
   maxSteeringAngle: 45
-  maxSpeed: 45
+  maxSpeed: 180
   steeringCurve:
     serializedVersion: 2
     m_Curve:
@@ -2029,7 +2028,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   slipSmokeThreshold: 0.3
-  steerTime: 9
+  steerTime: 100
   Wheels:
     FrontLeft:
       Collider: {fileID: 3179313874924442010}
@@ -2125,7 +2124,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 5000
+  MaxStep: 2000
   startPos: {fileID: 0}
   carController: {fileID: 8287312040880992738}
   checkpoints: {fileID: 0}
@@ -2156,8 +2155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 9
-    NumStackedVectorObservations: 1
+    VectorObservationSize: 5
+    NumStackedVectorObservations: 2
     m_ActionSpec:
       m_NumContinuousActions: 3
       BranchSizes: 
@@ -2166,7 +2165,7 @@ MonoBehaviour:
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
-  m_InferenceDevice: 0
+  m_InferenceDevice: 1
   m_BehaviorType: 0
   m_BehaviorName: AIDriver
   TeamId: 0
@@ -2189,16 +2188,16 @@ MonoBehaviour:
   m_DetectableTags:
   - Wall
   - Car
-  m_RaysPerDirection: 2
-  m_MaxRayDegrees: 117
+  m_RaysPerDirection: 5
+  m_MaxRayDegrees: 107.8
   m_SphereCastRadius: 0.77
-  m_RayLength: 12
+  m_RayLength: 25
   m_RayLayerMask:
     serializedVersion: 2
     m_Bits: 4294966848
   m_ObservationStacks: 1
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
-  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  rayMissColor: {r: 1, g: 0.74041903, b: 0, a: 1}
   m_StartVerticalOffset: 0.44
   m_EndVerticalOffset: 0.44
 --- !u!114 &232510630308404999
@@ -2217,8 +2216,8 @@ MonoBehaviour:
   m_DetectableTags:
   - Wall
   - Car
-  m_RaysPerDirection: 1
-  m_MaxRayDegrees: 5.1
+  m_RaysPerDirection: 2
+  m_MaxRayDegrees: 8.2
   m_SphereCastRadius: 0.5
   m_RayLength: 137
   m_RayLayerMask:
@@ -2226,35 +2225,8 @@ MonoBehaviour:
     m_Bits: 64
   m_ObservationStacks: 1
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
-  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  rayMissColor: {r: 0.6981132, g: 0.2575513, b: 0, a: 1}
   m_StartVerticalOffset: 0.44
-  m_EndVerticalOffset: 0
---- !u!114 &232510630591986772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4661389408142810834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SensorName: CheckpointSensor
-  m_DetectableTags:
-  - Checkpoint
-  m_RaysPerDirection: 0
-  m_MaxRayDegrees: 0
-  m_SphereCastRadius: 0.82
-  m_RayLength: 10
-  m_RayLayerMask:
-    serializedVersion: 2
-    m_Bits: 128
-  m_ObservationStacks: 1
-  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
-  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
-  m_StartVerticalOffset: 0
   m_EndVerticalOffset: 0
 --- !u!1 &4931519098811037229
 GameObject:

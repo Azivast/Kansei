@@ -16,8 +16,10 @@ public class AIDriver : Agent
     private Checkpoint targetCheckpoint;
     private Rigidbody carRB;
     private float timer = 0;
-    private bool goalReached = false;
-    private double time;
+    private float timeTaken;
+    private bool finished;
+    public float Speed;
+    private float speedTimer;
 
     protected override void OnEnable()
     {
@@ -33,33 +35,46 @@ public class AIDriver : Agent
                              new Vector3(Random.insideUnitCircle.x, 0 ,Random.insideUnitCircle.y);
         transform.rotation = startPos.rotation;
         targetCheckpoint = checkpoints.GetFirstCheckpoint();
-
-        time = Time.time;
+        
+        timeTaken = 0;
+        speedTimer = 0;
+        finished = false;
     }
     
     private void FinishEpisode()
     {
-        float timeTaken = (float)(Time.time - time);
-        AddReward(-timeTaken);
+        //AddReward(10/timeTaken);
         EndEpisode();
     }
 
+    public float slip;
+    public float checkpointDir;
     public override void CollectObservations(VectorSensor sensor)
     {
+        Vector3 driftValue = transform.InverseTransformVector(carRB.velocity);
+        slip = (Mathf.Atan2(driftValue.x, driftValue.z) * Mathf.Rad2Deg);
+        slip *=2;
+        
+        Vector3 checkpointValue = transform.InverseTransformVector(targetCheckpoint.transform.forward);
+        checkpointDir = (Mathf.Atan2(checkpointValue.x, checkpointValue.z) * Mathf.Rad2Deg);
+        checkpointDir *= 2;
+        
         sensor.AddObservation(carRB.velocity);
-        sensor.AddObservation(carRB.angularVelocity);
-        sensor.AddObservation(carRB.transform.forward);
+        sensor.AddObservation(slip);
+        sensor.AddObservation(checkpointDir);
+        
+        Speed = carRB.velocity.magnitude;
     }
 
     public override void OnActionReceived(ActionBuffers actions)
     {
         float steer = actions.ContinuousActions[0];
-        // float throttle = (actions.ContinuousActions[1]+1)*0.5f; // make range 0-1
-        // float brake = (actions.ContinuousActions[2]+1)*0.5f; // make range 0-1
         float throttle = Mathf.Clamp(actions.ContinuousActions[1], 0, 1);
         float brake = -Mathf.Clamp(actions.ContinuousActions[1], -1, 0);
         
         carController.SetInputs(steer, throttle, brake, 0);
+        
+        if (Speed > 0.1f && throttle < 1) AddReward(0.01f);
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
@@ -82,8 +97,8 @@ public class AIDriver : Agent
     {
         if (other.TryGetComponent<Goal>(out _))
         {
-            AddReward(+10);
-            FinishEpisode();
+            AddReward(+30);
+            finished = true;
             return;
         }
         
@@ -92,12 +107,13 @@ public class AIDriver : Agent
             if (thisCheckpoint == targetCheckpoint)
             {
                 targetCheckpoint = checkpoints.GetNextCheckpoint(targetCheckpoint);
-                AddReward(+2);
+                AddReward(+10);
             }
             else
             {
-                AddReward(-2);
+                SetReward(0);
                 Debug.Log("Car drove wrong way");
+                FinishEpisode();
             }
         }
     }
@@ -106,25 +122,33 @@ public class AIDriver : Agent
     {
         if (other.collider.TryGetComponent<Wall>(out _))
         {
-            AddReward(-10f);
-            //FinishEpisode();
+            //AddReward(-6f);
+            //finished = true;
         }
     }
-
+    
     private void FixedUpdate()
     {
-        // if (carRB.velocity.magnitude < 0.1f)
+        if (Speed < 7f && Speed > 2f && MathF.Abs(slip) < 3f) AddReward(0.2f); // Add reward for not drifting
+        timeTaken += Time.fixedDeltaTime;
+
+        if (Speed >= 7) AddReward(-1f);
+        if (Speed > 5f && Speed < 7) AddReward(1f);
+        if (Speed < 1f) AddReward(-1f);
+        // if (Speed < 1f) speedTimer += Time.fixedDeltaTime;
+        // else speedTimer = 0;
+        //
+        // if (speedTimer > 4)
         // {
-        //     timer += Time.fixedDeltaTime;
-        //     if (timer > 1f)
-        //     {
-        //         //AddReward(-1f);
-        //         FinishEpisode();
-        //     }
+        //     AddReward(-0.04f);
+        //     //finished = true;
         // }
-        // else
-        // {
-        //     timer = 0;
-        // }
+        
+        if (finished)
+        { 
+            FinishEpisode();
+        }
+
+
     }
 }

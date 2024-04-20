@@ -1,0 +1,38 @@
+{
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.0.1+cu118"
+    },
+    "AIDriver": {
+        "checkpoints": [
+            {
+                "steps": 0,
+                "file_path": "results\\49\\AIDriver\\AIDriver-0.onnx",
+                "reward": null,
+                "creation_time": 1713533994.420858,
+                "auxillary_file_paths": [
+                    "results\\49\\AIDriver\\AIDriver-0.pt"
+                ]
+            },
+            {
+                "steps": 1923,
+                "file_path": "results\\49\\AIDriver\\AIDriver-1923.onnx",
+                "reward": -2.7233334742486477,
+                "creation_time": 1713534097.2840095,
+                "auxillary_file_paths": [
+                    "results\\49\\AIDriver\\AIDriver-1923.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1923,
+            "file_path": "results\\49\\AIDriver.onnx",
+            "reward": -2.7233334742486477,
+            "creation_time": 1713534097.2840095,
+            "auxillary_file_paths": [
+                "results\\49\\AIDriver\\AIDriver-1923.pt"
+            ]
+        }
+    }
+}

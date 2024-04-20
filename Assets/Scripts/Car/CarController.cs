@@ -28,7 +28,7 @@ public class CarController : MonoBehaviour
     public float steerTime = 8f;
     
     [Header("Components")]
-    [SerializeField] private Wheels Wheels;
+    [SerializeField] public Wheels Wheels;
     [SerializeField] private Rigidbody carRB;
     [SerializeField] private GameObject tireSmokePrefab;
     
@@ -184,7 +184,7 @@ public class CarController : MonoBehaviour
         Wheels.RearLeft.Collider.brakeTorque = rearBrakeForce;
         Wheels.RearRight.Collider.brakeTorque = rearBrakeForce;
     }
-
+    
     private void Update()
     {
         EvaluateTireSmoke();
