@@ -796,16 +796,16 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 0.6
-    m_AsymptoteSlip: 8
-    m_AsymptoteValue: 0.8
+    m_ExtremumSlip: 1
+    m_ExtremumValue: 1.2
+    m_AsymptoteSlip: 1
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.7
-    m_ExtremumValue: 0.8
-    m_AsymptoteSlip: 1
-    m_AsymptoteValue: 0.5
+    m_ExtremumSlip: 1.8
+    m_ExtremumValue: 2
+    m_AsymptoteSlip: 1.8
+    m_AsymptoteValue: 1.8
     m_Stiffness: 1
   m_Enabled: 1
 --- !u!1 &833560914665025899
@@ -1278,16 +1278,16 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 0.6
-    m_AsymptoteSlip: 8
-    m_AsymptoteValue: 0.8
+    m_ExtremumSlip: 1
+    m_ExtremumValue: 1.2
+    m_AsymptoteSlip: 1
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.7
-    m_ExtremumValue: 0.8
-    m_AsymptoteSlip: 1
-    m_AsymptoteValue: 0.5
+    m_ExtremumSlip: 1.8
+    m_ExtremumValue: 2
+    m_AsymptoteSlip: 1.8
+    m_AsymptoteValue: 1.8
     m_Stiffness: 1
   m_Enabled: 1
 --- !u!1 &3406255374461986854
@@ -1747,13 +1747,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 1
     m_AsymptoteValue: 0.8
-    m_Stiffness: 1
+    m_Stiffness: 2
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.5
-    m_ExtremumValue: 0.6
-    m_AsymptoteSlip: 1
-    m_AsymptoteValue: 0.3
-    m_Stiffness: 1
+    m_ExtremumSlip: 1.8
+    m_ExtremumValue: 2
+    m_AsymptoteSlip: 1.5
+    m_AsymptoteValue: 1.5
+    m_Stiffness: 2
   m_Enabled: 1
 --- !u!1 &4463471761722009530
 GameObject:
@@ -1974,7 +1974,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &8287312040880992738
 MonoBehaviour:
@@ -2001,7 +2001,7 @@ MonoBehaviour:
   brakeTorque: 50000
   brakeBias: 0.7
   handbrakeTorque: 500000
-  maxSteeringAngle: 45
+  maxSteeringAngle: 65
   maxSpeed: 180
   steeringCurve:
     serializedVersion: 2
@@ -2028,7 +2028,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   slipSmokeThreshold: 0.3
-  steerTime: 100
+  steerTime: 10
   Wheels:
     FrontLeft:
       Collider: {fileID: 3179313874924442010}
@@ -2093,7 +2093,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftWheel: {fileID: 3179313874924442010}
   RightWheel: {fileID: 7395964034804374128}
-  RollBarStiffness: 2000
+  RollBarStiffness: 8000
 --- !u!114 &3302404770619730659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2108,7 +2108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftWheel: {fileID: 9170655331607695658}
   RightWheel: {fileID: 8181112975712281238}
-  RollBarStiffness: 5000
+  RollBarStiffness: 1000
 --- !u!114 &232510630308405233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2124,10 +2124,14 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 2000
+  MaxStep: 10000
   startPos: {fileID: 0}
   carController: {fileID: 8287312040880992738}
   checkpoints: {fileID: 0}
+  sideRays: {fileID: 232510630308405238}
+  Speed: 0
+  slip: 0
+  checkpointDir: 0
 --- !u!114 &232510630308405232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2849,11 +2853,11 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 1
     m_AsymptoteValue: 0.8
-    m_Stiffness: 1
+    m_Stiffness: 2
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.5
-    m_ExtremumValue: 0.6
-    m_AsymptoteSlip: 1
-    m_AsymptoteValue: 0.3
-    m_Stiffness: 1
+    m_ExtremumSlip: 1.8
+    m_ExtremumValue: 2
+    m_AsymptoteSlip: 1.5
+    m_AsymptoteValue: 1.5
+    m_Stiffness: 2
   m_Enabled: 1

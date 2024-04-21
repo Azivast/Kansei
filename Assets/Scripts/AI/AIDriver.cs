@@ -13,6 +13,7 @@ public class AIDriver : Agent
     [SerializeField] private Transform startPos; 
     [SerializeField] private CarController carController;
     [SerializeField] private CheckpointCollection checkpoints;
+    [SerializeField] private RayPerceptionSensorComponent3D sideRays;
     private Checkpoint targetCheckpoint;
     private Rigidbody carRB;
     private float timer = 0;
@@ -43,7 +44,7 @@ public class AIDriver : Agent
     
     private void FinishEpisode()
     {
-        //AddReward(10/timeTaken);
+        AddReward(1000/timeTaken);
         EndEpisode();
     }
 
@@ -73,8 +74,6 @@ public class AIDriver : Agent
         float brake = -Mathf.Clamp(actions.ContinuousActions[1], -1, 0);
         
         carController.SetInputs(steer, throttle, brake, 0);
-        
-        if (Speed > 0.1f && throttle < 1) AddReward(0.01f);
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
@@ -113,28 +112,38 @@ public class AIDriver : Agent
             {
                 SetReward(0);
                 Debug.Log("Car drove wrong way");
-                FinishEpisode();
+                EndEpisode();
             }
         }
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.collider.TryGetComponent<Wall>(out _))
+        if (other.collider.TryGetComponent<Wall>(out Wall wall))
         {
-            //AddReward(-6f);
-            //finished = true;
+            if (wall.HasSpecialPenalty)
+            {
+                AddReward(-wall.SpecialPenalty);
+            }
+            else
+            {
+                //AddReward(-6f);
+                //finished = true;
+                EndEpisode();
+                //SetReward(0);
+            }
+
         }
     }
     
     private void FixedUpdate()
     {
-        if (Speed < 7f && Speed > 2f && MathF.Abs(slip) < 3f) AddReward(0.2f); // Add reward for not drifting
+        //if (Speed < 7f && Speed > 2f && MathF.Abs(slip) < 3f) AddReward(0.2f); // Add reward for not drifting
         timeTaken += Time.fixedDeltaTime;
-
-        if (Speed >= 7) AddReward(-1f);
-        if (Speed > 5f && Speed < 7) AddReward(1f);
-        if (Speed < 1f) AddReward(-1f);
+        
+        if (Speed >= 3) AddReward(0.04f);
+        // if (Speed > 5f && Speed < 7) AddReward(1f);
+        // if (Speed < 1f) AddReward(-1f);
         // if (Speed < 1f) speedTimer += Time.fixedDeltaTime;
         // else speedTimer = 0;
         //
@@ -143,6 +152,8 @@ public class AIDriver : Agent
         //     AddReward(-0.04f);
         //     //finished = true;
         // }
+
+        CheckIfCloseToWall();
         
         if (finished)
         { 
@@ -150,5 +161,27 @@ public class AIDriver : Agent
         }
 
 
+    }
+
+    private void CheckIfCloseToWall()
+    {
+        var rayInput = sideRays.GetRayPerceptionInput();
+        var rayOutput = RayPerceptionSensor.Perceive(rayInput);
+
+        if (Speed < 1f)
+        {
+            AddReward(-0.04f);
+            return;
+        }
+        
+        for (int i = 3; i < rayOutput.RayOutputs.Length; i++)
+        {
+            if (rayOutput.RayOutputs[i].HitFraction > 0.08f )
+            {
+                AddReward(+0.2f);
+            }
+        }
+        
+        
     }
 }
