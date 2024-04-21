@@ -42,6 +42,7 @@ public class CarController : MonoBehaviour
     private float speed;
     private float speedClamped;
     private float slipAngle;
+    public bool ClutchDepressed = false;
 
     public float MaxSteeringAngle => maxSteeringAngle;
     public float Speed => speed;
@@ -146,6 +147,8 @@ public class CarController : MonoBehaviour
 
     private void ApplyAcceleration()
     {
+        if (ClutchDepressed) return;
+        
         if (speed > maxSpeed)
         {
             Wheels.RearLeft.Collider.motorTorque = 0;

@@ -16,6 +16,6 @@ public class LapTimeUI : MonoBehaviour
 
     void Update()
     {
-        text.text = "Lap Time: " + LapTime.CurrentTime.ToString("F1") + " seconds";
+        text.text = "Lap Time: " + (((int)(10*LapTime.CurrentTime))/10f) + " seconds";
     }
 }
