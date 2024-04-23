@@ -40,7 +40,7 @@ public class EngineAudio : MonoBehaviour
         revvingSound.volume = 0;
     }
 
-    private void Update() // todo: lots of magic numbers here that could be explained
+    private void Update()
     {
         speedRatio = Mathf.Abs(controller.SpeedRatio);
         float speedDirection = Mathf.Sign(controller.Speed);
@@ -52,7 +52,7 @@ public class EngineAudio : MonoBehaviour
         revvingSound.volume = Mathf.Lerp(idleVolume, revvingMaxVolume, speedRatio);
         pitch = Mathf.Lerp(revvingSound.pitch,
             Mathf.Lerp(idlePitch, revvingMaxPitch, speedRatio) + revLimiter,
-            Time.deltaTime * 5); // Todo: this outer lerp needs to be reworked
+            Time.deltaTime * 5); // Todo: this outer lerp is a little funky, maybe refactor
         revvingSound.pitch = pitch;
     }
 }

@@ -52,7 +52,7 @@ public class CarController : MonoBehaviour
     {
         get
         {
-            var throttleClamped = Mathf.Clamp(Mathf.Abs(throttleAmount), 0.5f, 1f); // todo explain the reason for this
+            var throttleClamped = Mathf.Clamp(Mathf.Abs(throttleAmount), 0.5f, 1f);
             return speedClamped*throttleClamped/maxSpeed;
         }
     }

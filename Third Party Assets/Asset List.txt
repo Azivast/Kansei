@@ -1,0 +1,27 @@
+86 model: https://sketchfab.com/3d-models/toyota-ae86-sprinter-trueno-zenki-a5737bf3cc9b4179a6e5ebe173ff70d9 (CC BY 4.0 Deed)
+mx5 model: https://sketchfab.com/3d-models/mazda-miata-mx-5-e074e29ccc3847dca74ed5e9cb92d3e7 (CC BY 4.0 Deed )
+
+vids:
+Car physics: https://www.youtube.com/watch?v=x0LUiE0dxP0
+Car controller physics based: https://www.youtube.com/watch?v=jr4eb4F9PSQ&list=PLyh3AdCGPTSLg0PZuD1ykJJDnC1mThI42
+Car Controller: https://www.youtube.com/watch?v=gEwNHUDc8uE&list=PL0JXhw1odpJLTRBDdv4ybtYkuD1lEcF-N
+
+Materials:
+Ground 037 cc0: https://ambientcg.com/view?id=Ground037
+Moss003 cc0: https://ambientcg.com/view?id=Moss003
+Rock 036: https://ambientcg.com/view?id=Rock036
+
+Road Architect MIT: https://github.com/FritzsHero/RoadArchitect/
+
+Engine Sounds: unity karting game https://learn.unity.com/project/karting-template
+4AGE Sounds CC BY 4.0 & CC0: https://freesound.org/people/qopsinonstudios/packs/28608/
+
+trees: https://assetstore.unity.com/packages/3d/vegetation/trees/urp-tree-models-253340 (Standard Unity Asset Store EULA)
+
+
+AI-teknologin:
+How to use Machine Learning AI in Unity! (ML-Agents) : https://www.youtube.com/watch?v=zPFU30tbyKsSE
+Teach your AI! Imitation Learning with Unity ML-Agents! : https://www.youtube.com/watch?v=supqT7kqpEI
+AI Learns to Drive a Car! (ML-Agents in Unity) : https://www.youtube.com/watch?v=2X5m_nDBvS4
+
+

@@ -1,0 +1,28 @@
+Toyota AE86 Sprinter Trueno Zenki (CC BY 4.0) https://sketchfab.com/3d-models/toyota-ae86-sprinter-trueno-zenki-a5737bf3cc9b4179a6e5ebe173ff70d9 
+Toyota logos were removed.
+
+URP Tree Models (Standard Unity Asset Store EULA): https://assetstore.unity.com/packages/3d/vegetation/trees/urp-tree-models-253340 
+
+Ground 037 (CC0): https://ambientcg.com/view?id=Ground037 
+
+Moss003 (CC0): https://ambientcg.com/view?id=Moss003 
+
+Rock 036 (CC0): https://ambientcg.com/view?id=Rock036 
+
+Engine sounds from Karting Microgame (Unity Companion License / Standard Unity Asset Store EULA): https://assetstore.unity.com/packages/templates/unity-learn-karting-microgame-urp-150956 
+
+4AGE Sounds (CC BY 4.0 & CC0): https://freesound.org/people/qopsinonstudios/packs/28608/ 
+
+Road Architect (MIT): https://github.com/FritzsHero/RoadArchitect/ 
+
+
+
+Licenses:
+CC BY 4.0: hhttps://creativecommons.org/licenses/by/4.0/
+CC0: https://creativecommons.org/publicdomain/zero/1.0/
+Standard Unity Asset Store EULA: https://unity.com/legal/as-terms
+Unity Companion License: https://unity.com/legal/licenses/unity-companion-license
+MIT: https://opensource.org/license/MIT
+
+
+
