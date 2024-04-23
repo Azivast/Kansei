@@ -112,49 +112,16 @@ public class AIDriver : Agent
             {
                 SetReward(0);
                 Debug.Log("Car drove wrong way");
-                EndEpisode();
+                transform.Rotate(transform.up, 180); // spin around if driving wrong way
             }
-        }
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.collider.TryGetComponent<Wall>(out Wall wall))
-        {
-            if (wall.HasSpecialPenalty)
-            {
-                AddReward(-wall.SpecialPenalty);
-            }
-            else
-            {
-                //AddReward(-6f);
-                //finished = true;
-                EndEpisode();
-                //SetReward(0);
-            }
-
         }
     }
     
     private void FixedUpdate()
     {
-        //if (Speed < 7f && Speed > 2f && MathF.Abs(slip) < 3f) AddReward(0.2f); // Add reward for not drifting
         timeTaken += Time.fixedDeltaTime;
-        
         if (Speed >= 3) AddReward(0.04f);
-        // if (Speed > 5f && Speed < 7) AddReward(1f);
-        // if (Speed < 1f) AddReward(-1f);
-        // if (Speed < 1f) speedTimer += Time.fixedDeltaTime;
-        // else speedTimer = 0;
-        //
-        // if (speedTimer > 4)
-        // {
-        //     AddReward(-0.04f);
-        //     //finished = true;
-        // }
-
         CheckIfCloseToWall();
-        
         if (finished)
         { 
             FinishEpisode();
@@ -181,7 +148,5 @@ public class AIDriver : Agent
                 AddReward(+0.2f);
             }
         }
-        
-        
     }
 }

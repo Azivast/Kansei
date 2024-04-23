@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6744884194787191862}
   - component: {fileID: 3734529646151074635}
+  - component: {fileID: 2235491049694566914}
   m_Layer: 0
   m_Name: URP_Tree_1
   m_TagString: Untagged
@@ -67,6 +68,20 @@ LODGroup:
     renderers:
     - renderer: {fileID: 8851052174935355301}
   m_Enabled: 1
+--- !u!136 &2235491049694566914
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299712424454941021}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.18
+  m_Height: 3.5530822
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.2765411, z: 0}
 --- !u!1 &3393009937179818794
 GameObject:
   m_ObjectHideFlags: 0

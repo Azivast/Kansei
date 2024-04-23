@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class RaceManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class RaceManager : MonoBehaviour
     [SerializeField] private GameObject Countdown;
     private TMP_Text countdownText;
     private bool raceActive;
+    private int carsFinished;
 
     private void Awake()
     {
@@ -21,6 +23,9 @@ public class RaceManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(BeginRaceCountdown());
+        WinScreen.SetActive(false);
+        LooseScreen.SetActive(false);
+        LapTime.CurrentTime = 0;
     }
 
     private IEnumerator BeginRaceCountdown()
@@ -45,6 +50,12 @@ public class RaceManager : MonoBehaviour
         StartRace();
     }
     
+    private IEnumerator ReturnToMainMenu()
+    {
+        yield return new WaitForSeconds(10);
+        SceneManager.LoadScene("MainMenu");
+    }
+    
     void Update()
     {
         if (raceActive) LapTime.CurrentTime += Time.deltaTime;
@@ -53,24 +64,28 @@ public class RaceManager : MonoBehaviour
     private void StartRace()
     {
         LapTime.CurrentTime = 0;
+        carsFinished = 0;
         raceActive = true;
     }
 
-    private void OnWin()
+    public void GoalReached(CarController car)
     {
-        foreach (var driver in drivers)
-        {
-            driver.enabled = false;
-        }
-        WinScreen.SetActive(true);
-    }
+        carsFinished++;
+        car.CompleteStop = true;
+        if (car.AIControlled) return;
 
-    private void OnLoose()
-    {
-        foreach (var driver in drivers)
+
+        if (carsFinished == 1)
         {
-            driver.enabled = false;
+            WinScreen.SetActive(true);
+            raceActive = false;
+            StartCoroutine(ReturnToMainMenu());
         }
-        LooseScreen.SetActive(true);
+        else
+        {
+            LooseScreen.SetActive(true);
+            raceActive = false;
+            StartCoroutine(ReturnToMainMenu());
+        }
     }
 }

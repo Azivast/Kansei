@@ -43,6 +43,7 @@ public class CarController : MonoBehaviour
     private float speedClamped;
     private float slipAngle;
     public bool ClutchDepressed = false;
+    public bool CompleteStop = false;
 
     public float MaxSteeringAngle => maxSteeringAngle;
     public float Speed => speed;
@@ -55,7 +56,9 @@ public class CarController : MonoBehaviour
             return speedClamped*throttleClamped/maxSpeed;
         }
     }
-        
+    
+    public bool IsBraking => (brakeAmount > 0.2f);
+
     private void Awake()
     {
         carRB = GetComponent<Rigidbody>();
@@ -188,6 +191,14 @@ public class CarController : MonoBehaviour
         Wheels.RearRight.Collider.brakeTorque = rearBrakeForce;
     }
     
+    private void FullBrakes()
+    {
+        // Apply full brakes
+        Wheels.FrontLeft.Collider.brakeTorque = brakeTorque * brakeBias;
+        Wheels.FrontRight.Collider.brakeTorque = brakeTorque * brakeBias;
+        Wheels.RearLeft.Collider.brakeTorque = brakeTorque * (1 - brakeBias);
+        Wheels.RearRight.Collider.brakeTorque = brakeTorque * (1 - brakeBias);
+    }
     private void Update()
     {
         EvaluateTireSmoke();
@@ -198,6 +209,12 @@ public class CarController : MonoBehaviour
     {
         speed = Wheels.RearLeft.Collider.rpm * Wheels.RearLeft.Collider.radius * 2 * Mathf.PI / 10;
         speedClamped = Mathf.Lerp(speedClamped, speed, Time.fixedDeltaTime);
+
+        if (CompleteStop)
+        {
+            FullBrakes();
+            return;
+        }
         
         if (!AIControlled) GetPlayerInput();
         ApplySteering();

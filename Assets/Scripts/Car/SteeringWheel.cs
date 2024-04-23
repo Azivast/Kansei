@@ -27,8 +27,6 @@ public class SteeringWheel : MonoBehaviour
             initialRotation.x, 
             initialRotation.y, 
             initialRotation.z + steerFraction * maxSteeringWheelAngle);
-        
-
     }
 }
                 

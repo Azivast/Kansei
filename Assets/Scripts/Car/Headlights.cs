@@ -8,17 +8,18 @@ public class Headlights : MonoBehaviour
 {
     [SerializeField] private InputActionReference toggleHeadlightsInput;
     [SerializeField] private GameObject lights;
-    [SerializeField] private float animationDuration = 1.0f;
-    [SerializeField] private float rotationAmount = 90f;
-    [SerializeField] private bool startOn = false;
-    private Vector3 closed;
-    private Vector3 open;
-    private Vector3 target;
+    [SerializeField] private float animationSpeed = 3f;
+    [SerializeField] private float rotationOpen= 211.324f;
+    [SerializeField] private float rotationClosed= 270.401f;
+    private Vector3 rotationCurrent;
+    private float rotationTarget;
+    private bool open;
 
     private void Start()
     {
-        open = transform.localEulerAngles;
-        closed = open - new Vector3(rotationAmount, 0, 0);
+        rotationCurrent = transform.localEulerAngles;
+        rotationTarget = rotationOpen;
+        open = true;
     }
 
     private void OnEnable()
@@ -45,23 +46,26 @@ public class Headlights : MonoBehaviour
 
     private void ToggleHeadlights()
     {
-        if (lights.activeSelf)
+        if (open)
         {
+            open = false;
+            rotationTarget = rotationClosed;
             lights.SetActive(false);
-            target = closed;
-            Rotate();
         }
         else
         {
-            target = open;
-            Rotate();
+            open = true;
+            rotationTarget = rotationOpen;
             lights.SetActive(true);
         }
     }
     
-    // coroutine that lerps the transform n degrees in n seconds
-    private void Rotate()
+    private void Update()
     {
-        transform.localEulerAngles = target; //todo: lerp
+        
+        
+        rotationCurrent.x = Mathf.LerpAngle(rotationCurrent.x, rotationTarget, Time.deltaTime * animationSpeed);
+        //rotationCurrent.x = rotationTarget;
+        transform.localEulerAngles = rotationCurrent;
     }
 }
